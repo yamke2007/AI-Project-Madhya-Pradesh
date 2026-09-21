@@ -11,7 +11,7 @@
 |---|---|
 | Aryan Mishra | Source Lead + Data Engineering Lead |
 | Unnati Goyal | Model Lead |
-| Yamke Sai Krishan Reddy | Evaluation Lead |
+| Yamke Sai Krishna Reddy | Evaluation Lead |
 
 ## 1. Project Overview
 
