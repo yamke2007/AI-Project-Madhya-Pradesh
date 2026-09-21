@@ -5,7 +5,7 @@
 **State:** Madhya Pradesh (MP)  
 **Current Phase:** Phase 1 – Source Discovery and Knowledge Base Design
 
-## Team
+## Team 
 
 | Member | Role |
 |---|---|
