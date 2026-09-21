@@ -49,7 +49,8 @@ AI-Project-Madhya-Pradesh/
 │       ├── Phase1_Report.md
 │       ├── Problem_Statement.md
 │       ├── Source_Analysis.md
-│       └── Agent_Tool_Plan.md
+│       ├── Agent_Tool_Plan.md
+│       └── Team_Info.md
 └── logs/
     └── source_verification_log.md
 ```
