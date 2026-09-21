@@ -7,13 +7,11 @@
 
 ## Team
 
-Replace the placeholders below with the three team members' details.
-
 | Member | Role |
 |---|---|
-| Member 1 | Source Lead + Data Engineering Lead |
-| Member 2 | Model Lead |
-| Member 3 | Evaluation Lead |
+| Aryan Mishra | Source Lead + Data Engineering Lead |
+| Unnati Goyal | Model Lead |
+| Yamke Sai Krishan Reddy | Evaluation Lead |
 
 ## 1. Project Overview
 
