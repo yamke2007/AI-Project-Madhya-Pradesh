@@ -5,14 +5,6 @@
 **State:** Madhya Pradesh (MP)  
 **Current Phase:** Phase 1 – Source Discovery and Knowledge Base Design
 
-## Team 
-
-| Member | Role |
-|---|---|
-| Aryan Mishra | Source Lead + Data Engineering Lead |
-| Unnati Goyal | Model Lead |
-| Yamke Sai Krishna Reddy | Evaluation Lead |
-
 ## 1. Project Overview
 
 This project aims to build an agriculture information system for Madhya Pradesh by collecting, organizing, extracting and querying information from heterogeneous agriculture-related sources.
