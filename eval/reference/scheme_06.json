@@ -1,0 +1,27 @@
+{
+  "records": [
+    {
+      "crop": "MISSING:not_applicable",
+      "location": "MISSING:not_in_source",
+      "period": "MISSING:not_in_source",
+      "variable": "लाभार्थी का प्रकार",
+      "value": "किसान",
+      "unit": "text",
+      "value_kind": "text"
+    }
+  ],
+  "evidence": {
+    "case_id": "scheme_06",
+    "input": "eval/cases/scheme_06.html",
+    "reference": "eval/reference/scheme_06.json",
+    "agent": "scheme",
+    "source_group": "Document",
+    "language": "hi",
+    "checked": "source_verified_by_agent_not_human",
+    "source": "data/raw/msp_scheme.html",
+    "source_locator": "table:1/row:9",
+    "input_sha256": "c52f04cf949e0e4bf628cfcdd879b26e154bbbe55b719f568e5550a053aa2696",
+    "parent_sha256": "94c35bb27ef193ff23118ddd78a80a8f26fb0637ffec814fc6c96731cc5b8074",
+    "benchmark_limit": "source-derived fragment; development-visible source; not independent unseen document"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "records": [
+    {
+      "crop": "MISSING:not_applicable",
+      "location": "MISSING:not_in_source",
+      "period": "MISSING:not_in_source",
+      "variable": "विभाग",
+      "value": "खाद्य नागरिक आपूर्ति एवं उपभोक्ता संरक्षण विभाग",
+      "unit": "text",
+      "value_kind": "text"
+    }
+  ],
+  "evidence": {
+    "case_id": "scheme_01",
+    "input": "eval/cases/scheme_01.html",
+    "reference": "eval/reference/scheme_01.json",
+    "agent": "scheme",
+    "source_group": "Document",
+    "language": "hi",
+    "checked": "source_verified_by_agent_not_human",
+    "source": "data/raw/msp_scheme.html",
+    "source_locator": "table:1/row:1",
+    "input_sha256": "c3eab98187cf5ca8bac2781d38d42b29a693136b95df2272eaa480d93dd3866c",
+    "parent_sha256": "94c35bb27ef193ff23118ddd78a80a8f26fb0637ffec814fc6c96731cc5b8074",
+    "benchmark_limit": "source-derived fragment; development-visible source; not independent unseen document"
+  }
+}

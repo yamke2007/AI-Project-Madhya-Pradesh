@@ -1,0 +1,170 @@
+{
+  "records": [
+    {
+      "crop": "soybean",
+      "location": "ashoknagar",
+      "period": "2015-07-07",
+      "variable": "arrivals",
+      "value": "243.00",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "soybean",
+      "location": "ashoknagar",
+      "period": "2015-07-07",
+      "variable": "min_price",
+      "value": "2400",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "ashoknagar",
+      "period": "2015-07-07",
+      "variable": "max_price",
+      "value": "3370",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "ashoknagar",
+      "period": "2015-07-07",
+      "variable": "modal_price",
+      "value": "3150",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "betul",
+      "period": "2015-07-07",
+      "variable": "arrivals",
+      "value": "117.40",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "soybean",
+      "location": "betul",
+      "period": "2015-07-07",
+      "variable": "min_price",
+      "value": "2800",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "betul",
+      "period": "2015-07-07",
+      "variable": "max_price",
+      "value": "3285",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "betul",
+      "period": "2015-07-07",
+      "variable": "modal_price",
+      "value": "3250",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "bhopal",
+      "period": "2015-07-07",
+      "variable": "arrivals",
+      "value": "71.90",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "soybean",
+      "location": "bhopal",
+      "period": "2015-07-07",
+      "variable": "min_price",
+      "value": "2840",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "bhopal",
+      "period": "2015-07-07",
+      "variable": "max_price",
+      "value": "3316",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "bhopal",
+      "period": "2015-07-07",
+      "variable": "modal_price",
+      "value": "3041",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "burhanpur",
+      "period": "2015-07-07",
+      "variable": "arrivals",
+      "value": "0.40",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "soybean",
+      "location": "burhanpur",
+      "period": "2015-07-07",
+      "variable": "min_price",
+      "value": "3204",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "burhanpur",
+      "period": "2015-07-07",
+      "variable": "max_price",
+      "value": "3204",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "burhanpur",
+      "period": "2015-07-07",
+      "variable": "modal_price",
+      "value": "3204",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    }
+  ],
+  "evidence": {
+    "case_id": "tables_03",
+    "input": "eval/cases/tables_03_agmarknet_soyabean_2015.csv",
+    "reference": "eval/reference/tables_03.json",
+    "agent": "tables",
+    "source_group": "Database",
+    "language": "en",
+    "split": "development",
+    "checked": "drafted_from_source_lines_by_script_needs_team_check",
+    "source": "https://raw.githubusercontent.com/iancovert/Agmarknet/master/Soyabean/2015.csv",
+    "source_locator": "Madhya Pradesh rows dated 07 Jul 2015",
+    "input_sha256": "14052dc6e1dc556f252d7ce5e6d35c65f263a71b1d230a33f1ad283b7337de7a",
+    "parent_sha256": "4e7bcf8fc711c154469e708672a7cf0ab9ade62d525876f415e93a58bf8a1ff7",
+    "parent_remote": true,
+    "benchmark_limit": "real Agmarknet records (official DMI data via public GitHub archive); row extract with restored header; not seen during agent development",
+    "source_lines": [
+      "Madhya Pradesh,Ashoknagar,Ashoknagar,Yellow,Oil Seeds,243.00,2400,3370,3150,07 Jul 2015",
+      "Madhya Pradesh,Betul,Betul,Yellow,Oil Seeds,117.40,2800,3285,3250,07 Jul 2015",
+      "Madhya Pradesh,Bhopal,Berasia,Soyabeen,Oil Seeds,71.90,2840,3316,3041,07 Jul 2015",
+      "Madhya Pradesh,Burhanpur,Burhanpur,Yellow,Oil Seeds,0.40,3204,3204,3204,07 Jul 2015"
+    ]
+  }
+}

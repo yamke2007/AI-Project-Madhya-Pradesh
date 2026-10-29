@@ -1,0 +1,170 @@
+{
+  "records": [
+    {
+      "crop": "soybean",
+      "location": "shivpuri",
+      "period": "2016-06-11",
+      "variable": "arrivals",
+      "value": "6.20",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "soybean",
+      "location": "shivpuri",
+      "period": "2016-06-11",
+      "variable": "min_price",
+      "value": "2960",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "shivpuri",
+      "period": "2016-06-11",
+      "variable": "max_price",
+      "value": "3540",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "shivpuri",
+      "period": "2016-06-11",
+      "variable": "modal_price",
+      "value": "3285",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "tikamgarh",
+      "period": "2016-06-11",
+      "variable": "arrivals",
+      "value": "3.50",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "soybean",
+      "location": "tikamgarh",
+      "period": "2016-06-11",
+      "variable": "min_price",
+      "value": "3600",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "tikamgarh",
+      "period": "2016-06-11",
+      "variable": "max_price",
+      "value": "3660",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "tikamgarh",
+      "period": "2016-06-11",
+      "variable": "modal_price",
+      "value": "3635",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "ujjain",
+      "period": "2016-06-11",
+      "variable": "arrivals",
+      "value": "3328.00",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "soybean",
+      "location": "ujjain",
+      "period": "2016-06-11",
+      "variable": "min_price",
+      "value": "3585",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "ujjain",
+      "period": "2016-06-11",
+      "variable": "max_price",
+      "value": "4390",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "ujjain",
+      "period": "2016-06-11",
+      "variable": "modal_price",
+      "value": "3880",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "vidisha",
+      "period": "2016-06-11",
+      "variable": "arrivals",
+      "value": "4.10",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "soybean",
+      "location": "vidisha",
+      "period": "2016-06-11",
+      "variable": "min_price",
+      "value": "2501",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "vidisha",
+      "period": "2016-06-11",
+      "variable": "max_price",
+      "value": "3568",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "soybean",
+      "location": "vidisha",
+      "period": "2016-06-11",
+      "variable": "modal_price",
+      "value": "3171",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    }
+  ],
+  "evidence": {
+    "case_id": "tables_05",
+    "input": "eval/cases/tables_05_agmarknet_soyabean_2016.csv",
+    "reference": "eval/reference/tables_05.json",
+    "agent": "tables",
+    "source_group": "Database",
+    "language": "en",
+    "split": "development",
+    "checked": "drafted_from_source_lines_by_script_needs_team_check",
+    "source": "https://raw.githubusercontent.com/iancovert/Agmarknet/master/Soyabean/2016.csv",
+    "source_locator": "Madhya Pradesh rows dated 11 Jun 2016",
+    "input_sha256": "bd802f83680074cdce21653fa037037135f08b379268cfde8cd1ac398f38c1e4",
+    "parent_sha256": "b2a154deb427cd0bf28326c3b8777c0d015568f22b1aaf1e91ea8418bf483ae4",
+    "parent_remote": true,
+    "benchmark_limit": "real Agmarknet records (official DMI data via public GitHub archive); row extract with restored header; not seen during agent development",
+    "source_lines": [
+      "Madhya Pradesh,Shivpuri,Badarwas,Soyabeen,Oil Seeds,6.20,2960,3540,3285,11 Jun 2016",
+      "Madhya Pradesh,Tikamgarh,Niwadi,Yellow,Oil Seeds,3.50,3600,3660,3635,11 Jun 2016",
+      "Madhya Pradesh,Ujjain,Badnagar,Yellow,Oil Seeds,\"3,328.00\",3585,4390,3880,11 Jun 2016",
+      "Madhya Pradesh,Vidisha,Shamshabad,Yellow,Oil Seeds,4.10,2501,3568,3171,11 Jun 2016"
+    ]
+  }
+}

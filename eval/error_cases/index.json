@@ -1,0 +1,38 @@
+[
+  {
+    "case_id": "unrendered_fertilizer_template",
+    "input": "data/raw/evikas_calculator.html",
+    "expected_status": "failed",
+    "error_contains": "Unrendered dynamic template",
+    "why": "The actual selected portal snapshot contains placeholders, not observations."
+  },
+  {
+    "case_id": "inventory_is_not_production_data",
+    "input": "Source_Inventory/source_inventory.csv",
+    "expected_status": "failed",
+    "error_contains": "Table agent found no table values",
+    "why": "The genuine Phase 1 CSV is inventory metadata, not crop statistics; the generic table route must reject it without inventing observations."
+  },
+  {
+    "case_id": "unsupported_manual_pdf",
+    "input": "data/raw/e_mandi_manual.pdf",
+    "expected_status": "failed",
+    "error_contains": "No supported production sentences",
+    "why": "The genuine e-Mandi workflow manual must not be interpreted as market price data."
+  },
+  {
+    "case_id": "real_scheme_missing_values",
+    "input": "data/raw/msp_scheme.html",
+    "expected_status": "partial",
+    "missing_values": 5,
+    "why": "Five source cells are blank; explicit unknowns and partial status are required."
+  },
+  {
+    "case_id": "directory_injected_fault",
+    "input": "data/raw/icar_kvk.html",
+    "fault": "extract",
+    "expected_status": "failed",
+    "error_contains": "Injected extraction failure",
+    "why": "Deliberate fault tests fail-closed behavior, not extraction accuracy."
+  }
+]

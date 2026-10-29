@@ -1,0 +1,170 @@
+{
+  "records": [
+    {
+      "crop": "wheat",
+      "location": "sidhi",
+      "period": "2013-04-22",
+      "variable": "arrivals",
+      "value": "25.00",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "wheat",
+      "location": "sidhi",
+      "period": "2013-04-22",
+      "variable": "min_price",
+      "value": "1504",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "sidhi",
+      "period": "2013-04-22",
+      "variable": "max_price",
+      "value": "1510",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "sidhi",
+      "period": "2013-04-22",
+      "variable": "modal_price",
+      "value": "1510",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "tikamgarh",
+      "period": "2013-04-22",
+      "variable": "arrivals",
+      "value": "1399.50",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "wheat",
+      "location": "tikamgarh",
+      "period": "2013-04-22",
+      "variable": "min_price",
+      "value": "1290",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "tikamgarh",
+      "period": "2013-04-22",
+      "variable": "max_price",
+      "value": "1502",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "tikamgarh",
+      "period": "2013-04-22",
+      "variable": "modal_price",
+      "value": "1396",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "ujjain",
+      "period": "2013-04-22",
+      "variable": "arrivals",
+      "value": "329.70",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "wheat",
+      "location": "ujjain",
+      "period": "2013-04-22",
+      "variable": "min_price",
+      "value": "1375",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "ujjain",
+      "period": "2013-04-22",
+      "variable": "max_price",
+      "value": "1752",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "ujjain",
+      "period": "2013-04-22",
+      "variable": "modal_price",
+      "value": "1588",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "vidisha",
+      "period": "2013-04-22",
+      "variable": "arrivals",
+      "value": "483.80",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "wheat",
+      "location": "vidisha",
+      "period": "2013-04-22",
+      "variable": "min_price",
+      "value": "1500",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "vidisha",
+      "period": "2013-04-22",
+      "variable": "max_price",
+      "value": "1500",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "vidisha",
+      "period": "2013-04-22",
+      "variable": "modal_price",
+      "value": "1500",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    }
+  ],
+  "evidence": {
+    "case_id": "tables_18",
+    "input": "eval/cases/tables_18_agmarknet_wheat_2013.csv",
+    "reference": "eval/reference/tables_18.json",
+    "agent": "tables",
+    "source_group": "Database",
+    "language": "en",
+    "split": "heldout",
+    "checked": "drafted_from_source_lines_by_script_needs_team_check",
+    "source": "https://raw.githubusercontent.com/iancovert/Agmarknet/master/Wheat/2013.csv",
+    "source_locator": "Madhya Pradesh rows dated 22 Apr 2013",
+    "input_sha256": "e42e1f76f14e90b7a416db5753b18efe417cd24caa7e0d7fd4e0b034ab04073f",
+    "parent_sha256": "0cfd99043802af2908fff531fefeb46a357b21601159628518a9b38ba34d5fb1",
+    "parent_remote": true,
+    "benchmark_limit": "real Agmarknet records (official DMI data via public GitHub archive); row extract with restored header; not seen during agent development",
+    "source_lines": [
+      "Madhya Pradesh,Sidhi,Sidhi,Other,Cereals,25.00,1504,1510,1510,22 Apr 2013",
+      "Madhya Pradesh,Tikamgarh,Niwadi,Lokwan MP No. 1,Cereals,\"1,399.50\",1290,1502,1396,22 Apr 2013",
+      "Madhya Pradesh,Ujjain,Badnagar,147 Average,Cereals,329.70,1375,1752,1588,22 Apr 2013",
+      "Madhya Pradesh,Vidisha,Lateri,Lokwan,Cereals,483.80,1500,1500,1500,22 Apr 2013"
+    ]
+  }
+}

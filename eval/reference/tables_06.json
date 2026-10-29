@@ -1,0 +1,170 @@
+{
+  "records": [
+    {
+      "crop": "wheat",
+      "location": "alirajpur",
+      "period": "2012-05-17",
+      "variable": "arrivals",
+      "value": "27.50",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "wheat",
+      "location": "alirajpur",
+      "period": "2012-05-17",
+      "variable": "min_price",
+      "value": "1385",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "alirajpur",
+      "period": "2012-05-17",
+      "variable": "max_price",
+      "value": "1400",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "alirajpur",
+      "period": "2012-05-17",
+      "variable": "modal_price",
+      "value": "1385",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "ashoknagar",
+      "period": "2012-05-17",
+      "variable": "arrivals",
+      "value": "22.40",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "wheat",
+      "location": "ashoknagar",
+      "period": "2012-05-17",
+      "variable": "min_price",
+      "value": "1385",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "ashoknagar",
+      "period": "2012-05-17",
+      "variable": "max_price",
+      "value": "1700",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "ashoknagar",
+      "period": "2012-05-17",
+      "variable": "modal_price",
+      "value": "1500",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "badwani",
+      "period": "2012-05-17",
+      "variable": "arrivals",
+      "value": "204.60",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "wheat",
+      "location": "badwani",
+      "period": "2012-05-17",
+      "variable": "min_price",
+      "value": "1385",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "badwani",
+      "period": "2012-05-17",
+      "variable": "max_price",
+      "value": "1385",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "badwani",
+      "period": "2012-05-17",
+      "variable": "modal_price",
+      "value": "1385",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "betul",
+      "period": "2012-05-17",
+      "variable": "arrivals",
+      "value": "579.00",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "wheat",
+      "location": "betul",
+      "period": "2012-05-17",
+      "variable": "min_price",
+      "value": "1080",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "betul",
+      "period": "2012-05-17",
+      "variable": "max_price",
+      "value": "1385",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "betul",
+      "period": "2012-05-17",
+      "variable": "modal_price",
+      "value": "1160",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    }
+  ],
+  "evidence": {
+    "case_id": "tables_06",
+    "input": "eval/cases/tables_06_agmarknet_wheat_2012.csv",
+    "reference": "eval/reference/tables_06.json",
+    "agent": "tables",
+    "source_group": "Database",
+    "language": "en",
+    "split": "development",
+    "checked": "drafted_from_source_lines_by_script_needs_team_check",
+    "source": "https://raw.githubusercontent.com/iancovert/Agmarknet/master/Wheat/2012.csv",
+    "source_locator": "Madhya Pradesh rows dated 17 May 2012",
+    "input_sha256": "97b1a679d971417625cd17ea7f63d3ab78af12c5e8e04b88b1842d8def96a2e7",
+    "parent_sha256": "79a388ce0095ba904bfc2bb41864affa0869a7cbb15a2a082ec6d87b13abf233",
+    "parent_remote": true,
+    "benchmark_limit": "real Agmarknet records (official DMI data via public GitHub archive); row extract with restored header; not seen during agent development",
+    "source_lines": [
+      "Madhya Pradesh,Alirajpur,Jobat,Other,Cereals,27.50,1385,1400,1385,17 May 2012",
+      "Madhya Pradesh,Ashoknagar,Isagarh,MP Sharbati,Cereals,22.40,1385,1700,1500,17 May 2012",
+      "Madhya Pradesh,Badwani,Anjad,Lokwan,Cereals,204.60,1385,1385,1385,17 May 2012",
+      "Madhya Pradesh,Betul,Betul,Deshi,Cereals,579.00,1080,1385,1160,17 May 2012"
+    ]
+  }
+}

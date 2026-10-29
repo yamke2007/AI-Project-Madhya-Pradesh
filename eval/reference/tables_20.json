@@ -1,0 +1,170 @@
+{
+  "records": [
+    {
+      "crop": "maize",
+      "location": "badwani",
+      "period": "2011-05-06",
+      "variable": "arrivals",
+      "value": "51.10",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "maize",
+      "location": "badwani",
+      "period": "2011-05-06",
+      "variable": "min_price",
+      "value": "900",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "badwani",
+      "period": "2011-05-06",
+      "variable": "max_price",
+      "value": "1000",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "badwani",
+      "period": "2011-05-06",
+      "variable": "modal_price",
+      "value": "950",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "betul",
+      "period": "2011-05-06",
+      "variable": "arrivals",
+      "value": "3.90",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "maize",
+      "location": "betul",
+      "period": "2011-05-06",
+      "variable": "min_price",
+      "value": "1050",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "betul",
+      "period": "2011-05-06",
+      "variable": "max_price",
+      "value": "1100",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "betul",
+      "period": "2011-05-06",
+      "variable": "modal_price",
+      "value": "1094",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "dewas",
+      "period": "2011-05-06",
+      "variable": "arrivals",
+      "value": "0.30",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "maize",
+      "location": "dewas",
+      "period": "2011-05-06",
+      "variable": "min_price",
+      "value": "1102",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "dewas",
+      "period": "2011-05-06",
+      "variable": "max_price",
+      "value": "1110",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "dewas",
+      "period": "2011-05-06",
+      "variable": "modal_price",
+      "value": "1108",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "dhar",
+      "period": "2011-05-06",
+      "variable": "arrivals",
+      "value": "520.00",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "maize",
+      "location": "dhar",
+      "period": "2011-05-06",
+      "variable": "min_price",
+      "value": "1050",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "dhar",
+      "period": "2011-05-06",
+      "variable": "max_price",
+      "value": "1080",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "dhar",
+      "period": "2011-05-06",
+      "variable": "modal_price",
+      "value": "1070",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    }
+  ],
+  "evidence": {
+    "case_id": "tables_20",
+    "input": "eval/cases/tables_20_agmarknet_maize_2011.csv",
+    "reference": "eval/reference/tables_20.json",
+    "agent": "tables",
+    "source_group": "Database",
+    "language": "en",
+    "split": "heldout",
+    "checked": "drafted_from_source_lines_by_script_needs_team_check",
+    "source": "https://raw.githubusercontent.com/iancovert/Agmarknet/master/Maize/2011.csv",
+    "source_locator": "Madhya Pradesh rows dated 06 May 2011",
+    "input_sha256": "b2bd91dd78fb37eda5f38bc6b6aa47effe3081ec89bd7ce52c346c1babcd615c",
+    "parent_sha256": "5c4df8ce4bf59840f11bdd4088974b44d9d61a9eab2c6c133f450c005828f4a9",
+    "parent_remote": true,
+    "benchmark_limit": "real Agmarknet records (official DMI data via public GitHub archive); row extract with restored header; not seen during agent development",
+    "source_lines": [
+      "Madhya Pradesh,Badwani,Anjad,Yellow,Cereals,51.10,900,1000,950,06 May 2011",
+      "Madhya Pradesh,Betul,Betul,Deshi Red,Cereals,3.90,1050,1100,1094,06 May 2011",
+      "Madhya Pradesh,Dewas,Dewas,Other,Cereals,0.30,1102,1110,1108,06 May 2011",
+      "Madhya Pradesh,Dhar,Dhamnod,Other,Cereals,520.00,1050,1080,1070,06 May 2011"
+    ]
+  }
+}

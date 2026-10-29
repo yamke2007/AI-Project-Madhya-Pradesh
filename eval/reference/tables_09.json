@@ -1,0 +1,170 @@
+{
+  "records": [
+    {
+      "crop": "wheat",
+      "location": "tikamgarh",
+      "period": "2015-07-28",
+      "variable": "arrivals",
+      "value": "135.30",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "wheat",
+      "location": "tikamgarh",
+      "period": "2015-07-28",
+      "variable": "min_price",
+      "value": "1355",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "tikamgarh",
+      "period": "2015-07-28",
+      "variable": "max_price",
+      "value": "1385",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "tikamgarh",
+      "period": "2015-07-28",
+      "variable": "modal_price",
+      "value": "1365",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "ujjain",
+      "period": "2015-07-28",
+      "variable": "arrivals",
+      "value": "18.00",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "wheat",
+      "location": "ujjain",
+      "period": "2015-07-28",
+      "variable": "min_price",
+      "value": "1472",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "ujjain",
+      "period": "2015-07-28",
+      "variable": "max_price",
+      "value": "1657",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "ujjain",
+      "period": "2015-07-28",
+      "variable": "modal_price",
+      "value": "1546",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "umariya",
+      "period": "2015-07-28",
+      "variable": "arrivals",
+      "value": "52.70",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "wheat",
+      "location": "umariya",
+      "period": "2015-07-28",
+      "variable": "min_price",
+      "value": "1450",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "umariya",
+      "period": "2015-07-28",
+      "variable": "max_price",
+      "value": "1467",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "umariya",
+      "period": "2015-07-28",
+      "variable": "modal_price",
+      "value": "1455",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "vidisha",
+      "period": "2015-07-28",
+      "variable": "arrivals",
+      "value": "4.00",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "wheat",
+      "location": "vidisha",
+      "period": "2015-07-28",
+      "variable": "min_price",
+      "value": "1450",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "vidisha",
+      "period": "2015-07-28",
+      "variable": "max_price",
+      "value": "1550",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "vidisha",
+      "period": "2015-07-28",
+      "variable": "modal_price",
+      "value": "1500",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    }
+  ],
+  "evidence": {
+    "case_id": "tables_09",
+    "input": "eval/cases/tables_09_agmarknet_wheat_2015.csv",
+    "reference": "eval/reference/tables_09.json",
+    "agent": "tables",
+    "source_group": "Database",
+    "language": "en",
+    "split": "development",
+    "checked": "drafted_from_source_lines_by_script_needs_team_check",
+    "source": "https://raw.githubusercontent.com/iancovert/Agmarknet/master/Wheat/2015.csv",
+    "source_locator": "Madhya Pradesh rows dated 28 Jul 2015",
+    "input_sha256": "9d406dc1315a4641ddcf773ae8f9e6f74a27723ffd2e385dcdc3a6c1ac32e4eb",
+    "parent_sha256": "a80281422f3053217b3695ea8eda4011f424cac1289cb183022a780df46e1002",
+    "parent_remote": true,
+    "benchmark_limit": "real Agmarknet records (official DMI data via public GitHub archive); row extract with restored header; not seen during agent development",
+    "source_lines": [
+      "Madhya Pradesh,Tikamgarh,Niwadi,Lokwan,Cereals,135.30,1355,1385,1365,28 Jul 2015",
+      "Madhya Pradesh,Ujjain,Badnagar,Lokwan,Cereals,18.00,1472,1657,1546,28 Jul 2015",
+      "Madhya Pradesh,Umariya,Umariya,Other,Cereals,52.70,1450,1467,1455,28 Jul 2015",
+      "Madhya Pradesh,Vidisha,Lateri,Deshi,Cereals,4.00,1450,1550,1500,28 Jul 2015"
+    ]
+  }
+}

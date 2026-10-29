@@ -1,0 +1,30 @@
+{
+  "records": [
+    {
+      "crop": "MISSING:not_applicable",
+      "location": "madhya pradesh",
+      "period": "MISSING:not_applicable",
+      "variable": "irrigation_capacity_growth",
+      "value": "585",
+      "unit": "percent",
+      "value_kind": "decimal",
+      "qualifier": "period not explicit in same clause",
+      "origin_locator": "page:7",
+      "origin_source": "data/raw/mp_economic_survey.pdf"
+    }
+  ],
+  "evidence": {
+    "case_id": "statistics_08",
+    "input": "eval/cases/statistics_08.csv",
+    "reference": "eval/reference/statistics_08.json",
+    "agent": "statistics",
+    "source_group": "Database",
+    "language": "en",
+    "checked": "source_verified_by_agent_not_human",
+    "source": "data/raw/mp_economic_survey.pdf",
+    "source_locator": "page:7",
+    "input_sha256": "109fa095635bfed59e598efc22a09a48797479dfd2fdc9952852c891682cc1ad",
+    "parent_sha256": "3457d6dc615a35d4ee1c61b338845d58deee2e31f67f8dce55f7611e1a5302f4",
+    "benchmark_limit": "source-derived fragment; development-visible source; not independent unseen document"
+  }
+}

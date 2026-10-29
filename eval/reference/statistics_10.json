@@ -1,0 +1,30 @@
+{
+  "records": [
+    {
+      "crop": "MISSING:not_applicable",
+      "location": "madhya pradesh",
+      "period": "2025",
+      "variable": "irrigation_capacity_target",
+      "value": "65",
+      "unit": "lakh hectare",
+      "value_kind": "decimal",
+      "qualifier": "target; not observed",
+      "origin_locator": "page:7",
+      "origin_source": "data/raw/mp_economic_survey.pdf"
+    }
+  ],
+  "evidence": {
+    "case_id": "statistics_10",
+    "input": "eval/cases/statistics_10.csv",
+    "reference": "eval/reference/statistics_10.json",
+    "agent": "statistics",
+    "source_group": "Database",
+    "language": "en",
+    "checked": "source_verified_by_agent_not_human",
+    "source": "data/raw/mp_economic_survey.pdf",
+    "source_locator": "page:7",
+    "input_sha256": "aa909af69c92e2d5105ad7877915fda3f96d8272adbb41aa050f7eb0c5ca452b",
+    "parent_sha256": "3457d6dc615a35d4ee1c61b338845d58deee2e31f67f8dce55f7611e1a5302f4",
+    "benchmark_limit": "source-derived fragment; development-visible source; not independent unseen document"
+  }
+}

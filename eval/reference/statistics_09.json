@@ -1,0 +1,30 @@
+{
+  "records": [
+    {
+      "crop": "MISSING:not_applicable",
+      "location": "madhya pradesh",
+      "period": "2022",
+      "variable": "irrigation_capacity_lower_bound",
+      "value": "45",
+      "unit": "lakh hectare",
+      "value_kind": "decimal",
+      "qualifier": "more than",
+      "origin_locator": "page:7",
+      "origin_source": "data/raw/mp_economic_survey.pdf"
+    }
+  ],
+  "evidence": {
+    "case_id": "statistics_09",
+    "input": "eval/cases/statistics_09.csv",
+    "reference": "eval/reference/statistics_09.json",
+    "agent": "statistics",
+    "source_group": "Database",
+    "language": "en",
+    "checked": "source_verified_by_agent_not_human",
+    "source": "data/raw/mp_economic_survey.pdf",
+    "source_locator": "page:7",
+    "input_sha256": "f45f6bb4ebb3a1647a684d79ecc66481e146cd1106c324f6312c5ced44452d60",
+    "parent_sha256": "3457d6dc615a35d4ee1c61b338845d58deee2e31f67f8dce55f7611e1a5302f4",
+    "benchmark_limit": "source-derived fragment; development-visible source; not independent unseen document"
+  }
+}

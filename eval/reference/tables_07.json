@@ -1,0 +1,170 @@
+{
+  "records": [
+    {
+      "crop": "wheat",
+      "location": "bhind",
+      "period": "2014-12-14",
+      "variable": "arrivals",
+      "value": "26.50",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "wheat",
+      "location": "bhind",
+      "period": "2014-12-14",
+      "variable": "min_price",
+      "value": "1425",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "bhind",
+      "period": "2014-12-14",
+      "variable": "max_price",
+      "value": "1475",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "bhind",
+      "period": "2014-12-14",
+      "variable": "modal_price",
+      "value": "1450",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "chhatarpur",
+      "period": "2014-12-14",
+      "variable": "arrivals",
+      "value": "16.00",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "wheat",
+      "location": "chhatarpur",
+      "period": "2014-12-14",
+      "variable": "min_price",
+      "value": "1400",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "chhatarpur",
+      "period": "2014-12-14",
+      "variable": "max_price",
+      "value": "1410",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "chhatarpur",
+      "period": "2014-12-14",
+      "variable": "modal_price",
+      "value": "1405",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "chhindwara",
+      "period": "2014-12-14",
+      "variable": "arrivals",
+      "value": "14.00",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "wheat",
+      "location": "chhindwara",
+      "period": "2014-12-14",
+      "variable": "min_price",
+      "value": "1420",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "chhindwara",
+      "period": "2014-12-14",
+      "variable": "max_price",
+      "value": "1450",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "chhindwara",
+      "period": "2014-12-14",
+      "variable": "modal_price",
+      "value": "1435",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "damoh",
+      "period": "2014-12-14",
+      "variable": "arrivals",
+      "value": "23.40",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "wheat",
+      "location": "damoh",
+      "period": "2014-12-14",
+      "variable": "min_price",
+      "value": "1400",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "damoh",
+      "period": "2014-12-14",
+      "variable": "max_price",
+      "value": "1400",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "wheat",
+      "location": "damoh",
+      "period": "2014-12-14",
+      "variable": "modal_price",
+      "value": "1400",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    }
+  ],
+  "evidence": {
+    "case_id": "tables_07",
+    "input": "eval/cases/tables_07_agmarknet_wheat_2014.csv",
+    "reference": "eval/reference/tables_07.json",
+    "agent": "tables",
+    "source_group": "Database",
+    "language": "en",
+    "split": "development",
+    "checked": "drafted_from_source_lines_by_script_needs_team_check",
+    "source": "https://raw.githubusercontent.com/iancovert/Agmarknet/master/Wheat/2014.csv",
+    "source_locator": "Madhya Pradesh rows dated 14 Dec 2014",
+    "input_sha256": "a930b8353525465f08af7cdf315c9f782403af603deefad9877fd208dac3890f",
+    "parent_sha256": "f0bdb45a4a721f3462da735e5a9ef3c50cfd54570ce6bdc01039b3ae24a32547",
+    "parent_remote": true,
+    "benchmark_limit": "real Agmarknet records (official DMI data via public GitHub archive); row extract with restored header; not seen during agent development",
+    "source_lines": [
+      "Madhya Pradesh,Bhind,Alampur,Other,Cereals,26.50,1425,1475,1450,14 Dec 2014",
+      "Madhya Pradesh,Chhatarpur,LavKush Nagar(Laundi),Deshi,Cereals,16.00,1400,1410,1405,14 Dec 2014",
+      "Madhya Pradesh,Chhindwara,Chaurai,Other,Cereals,14.00,1420,1450,1435,14 Dec 2014",
+      "Madhya Pradesh,Damoh,Hata,Lokwan,Cereals,23.40,1400,1400,1400,14 Dec 2014"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "records": [
+    {
+      "crop": "MISSING:not_applicable",
+      "location": "MISSING:not_in_source",
+      "period": "MISSING:not_in_source",
+      "variable": "हितग्राही मूलक है या नही",
+      "value": "नहीं",
+      "unit": "text",
+      "value_kind": "text"
+    }
+  ],
+  "evidence": {
+    "case_id": "scheme_03",
+    "input": "eval/cases/scheme_03.html",
+    "reference": "eval/reference/scheme_03.json",
+    "agent": "scheme",
+    "source_group": "Document",
+    "language": "hi",
+    "checked": "source_verified_by_agent_not_human",
+    "source": "data/raw/msp_scheme.html",
+    "source_locator": "table:1/row:3",
+    "input_sha256": "2aea24238156ca6059567a5b69d038918a2177b2bfd856804546b9e92f19fc29",
+    "parent_sha256": "94c35bb27ef193ff23118ddd78a80a8f26fb0637ffec814fc6c96731cc5b8074",
+    "benchmark_limit": "source-derived fragment; development-visible source; not independent unseen document"
+  }
+}

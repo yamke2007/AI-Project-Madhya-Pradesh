@@ -1,0 +1,170 @@
+{
+  "records": [
+    {
+      "crop": "maize",
+      "location": "badwani",
+      "period": "2012-11-25",
+      "variable": "arrivals",
+      "value": "95.10",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "maize",
+      "location": "badwani",
+      "period": "2012-11-25",
+      "variable": "min_price",
+      "value": "1150",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "badwani",
+      "period": "2012-11-25",
+      "variable": "max_price",
+      "value": "1200",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "badwani",
+      "period": "2012-11-25",
+      "variable": "modal_price",
+      "value": "1176",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "chhindwara",
+      "period": "2012-11-25",
+      "variable": "arrivals",
+      "value": "195.30",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "maize",
+      "location": "chhindwara",
+      "period": "2012-11-25",
+      "variable": "min_price",
+      "value": "1175",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "chhindwara",
+      "period": "2012-11-25",
+      "variable": "max_price",
+      "value": "1275",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "chhindwara",
+      "period": "2012-11-25",
+      "variable": "modal_price",
+      "value": "1225",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "guna",
+      "period": "2012-11-25",
+      "variable": "arrivals",
+      "value": "2.00",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "maize",
+      "location": "guna",
+      "period": "2012-11-25",
+      "variable": "min_price",
+      "value": "1320",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "guna",
+      "period": "2012-11-25",
+      "variable": "max_price",
+      "value": "1340",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "guna",
+      "period": "2012-11-25",
+      "variable": "modal_price",
+      "value": "1335",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "khargone",
+      "period": "2012-11-25",
+      "variable": "arrivals",
+      "value": "50.00",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "maize",
+      "location": "khargone",
+      "period": "2012-11-25",
+      "variable": "min_price",
+      "value": "1240",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "khargone",
+      "period": "2012-11-25",
+      "variable": "max_price",
+      "value": "1374",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "khargone",
+      "period": "2012-11-25",
+      "variable": "modal_price",
+      "value": "1307",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    }
+  ],
+  "evidence": {
+    "case_id": "tables_10",
+    "input": "eval/cases/tables_10_agmarknet_maize_2012.csv",
+    "reference": "eval/reference/tables_10.json",
+    "agent": "tables",
+    "source_group": "Database",
+    "language": "en",
+    "split": "development",
+    "checked": "drafted_from_source_lines_by_script_needs_team_check",
+    "source": "https://raw.githubusercontent.com/iancovert/Agmarknet/master/Maize/2012.csv",
+    "source_locator": "Madhya Pradesh rows dated 25 Nov 2012",
+    "input_sha256": "ef55f1d7475965472d9743a8908821090f24d31b0127d926c38f67ea0d4c302f",
+    "parent_sha256": "19124b9f2644801b7c33dc6ade11b576bd2733c9f06e52d837003b83e9af4840",
+    "parent_remote": true,
+    "benchmark_limit": "real Agmarknet records (official DMI data via public GitHub archive); row extract with restored header; not seen during agent development",
+    "source_lines": [
+      "Madhya Pradesh,Badwani,Anjad,Yellow,Cereals,95.10,1150,1200,1176,25 Nov 2012",
+      "Madhya Pradesh,Chhindwara,Chaurai,Other,Cereals,195.30,1175,1275,1225,25 Nov 2012",
+      "Madhya Pradesh,Guna,Binaganj,Other,Cereals,2.00,1320,1340,1335,25 Nov 2012",
+      "Madhya Pradesh,Khargone,Bhikangaon,Other,Cereals,50.00,1240,1374,1307,25 Nov 2012"
+    ]
+  }
+}

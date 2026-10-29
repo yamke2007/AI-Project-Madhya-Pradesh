@@ -1,0 +1,170 @@
+{
+  "records": [
+    {
+      "crop": "maize",
+      "location": "alirajpur",
+      "period": "2015-05-16",
+      "variable": "arrivals",
+      "value": "14.00",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "maize",
+      "location": "alirajpur",
+      "period": "2015-05-16",
+      "variable": "min_price",
+      "value": "1320",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "alirajpur",
+      "period": "2015-05-16",
+      "variable": "max_price",
+      "value": "1340",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "alirajpur",
+      "period": "2015-05-16",
+      "variable": "modal_price",
+      "value": "1330",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "badwani",
+      "period": "2015-05-16",
+      "variable": "arrivals",
+      "value": "82.90",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "maize",
+      "location": "badwani",
+      "period": "2015-05-16",
+      "variable": "min_price",
+      "value": "1310",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "badwani",
+      "period": "2015-05-16",
+      "variable": "max_price",
+      "value": "1310",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "badwani",
+      "period": "2015-05-16",
+      "variable": "modal_price",
+      "value": "1310",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "bhind",
+      "period": "2015-05-16",
+      "variable": "arrivals",
+      "value": "5.00",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "maize",
+      "location": "bhind",
+      "period": "2015-05-16",
+      "variable": "min_price",
+      "value": "1125",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "bhind",
+      "period": "2015-05-16",
+      "variable": "max_price",
+      "value": "1125",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "bhind",
+      "period": "2015-05-16",
+      "variable": "modal_price",
+      "value": "1125",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "bhopal",
+      "period": "2015-05-16",
+      "variable": "arrivals",
+      "value": "40.00",
+      "unit": "tonne",
+      "value_kind": "decimal"
+    },
+    {
+      "crop": "maize",
+      "location": "bhopal",
+      "period": "2015-05-16",
+      "variable": "min_price",
+      "value": "1125",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "bhopal",
+      "period": "2015-05-16",
+      "variable": "max_price",
+      "value": "1150",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    },
+    {
+      "crop": "maize",
+      "location": "bhopal",
+      "period": "2015-05-16",
+      "variable": "modal_price",
+      "value": "1150",
+      "unit": "INR/quintal",
+      "value_kind": "integer"
+    }
+  ],
+  "evidence": {
+    "case_id": "tables_12",
+    "input": "eval/cases/tables_12_agmarknet_maize_2015.csv",
+    "reference": "eval/reference/tables_12.json",
+    "agent": "tables",
+    "source_group": "Database",
+    "language": "en",
+    "split": "development",
+    "checked": "drafted_from_source_lines_by_script_needs_team_check",
+    "source": "https://raw.githubusercontent.com/iancovert/Agmarknet/master/Maize/2015.csv",
+    "source_locator": "Madhya Pradesh rows dated 16 May 2015",
+    "input_sha256": "cf3c0a71c3a3835a7a3186ea07357ae2df4084bbe4f98fcd39c7f08014eee9ff",
+    "parent_sha256": "afd541fd179cee6c5bea49ab2c2d7c4962913b8aa003dc22486f0e7679eabcda",
+    "parent_remote": true,
+    "benchmark_limit": "real Agmarknet records (official DMI data via public GitHub archive); row extract with restored header; not seen during agent development",
+    "source_lines": [
+      "Madhya Pradesh,Alirajpur,Alirajpur,Other,Cereals,14.00,1320,1340,1330,16 May 2015",
+      "Madhya Pradesh,Badwani,Anjad,Other,Cereals,82.90,1310,1310,1310,16 May 2015",
+      "Madhya Pradesh,Bhind,Bhind,Other,Cereals,5.00,1125,1125,1125,16 May 2015",
+      "Madhya Pradesh,Bhopal,Bhopal,Other,Cereals,40.00,1125,1150,1150,16 May 2015"
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "records": [
+    {
+      "crop": "wheat",
+      "location": "madhya pradesh",
+      "period": "2022-23",
+      "variable": "production",
+      "value": "352.7",
+      "unit": "lakh tonnes",
+      "value_kind": "decimal",
+      "qualifier": "advance estimate",
+      "origin_locator": "page:7",
+      "origin_source": "data/raw/mp_economic_survey.pdf"
+    }
+  ],
+  "evidence": {
+    "case_id": "statistics_01",
+    "input": "eval/cases/statistics_01.csv",
+    "reference": "eval/reference/statistics_01.json",
+    "agent": "statistics",
+    "source_group": "Database",
+    "language": "en",
+    "checked": "source_verified_by_agent_not_human",
+    "source": "data/raw/mp_economic_survey.pdf",
+    "source_locator": "page:7",
+    "input_sha256": "54d7b6661fcb7caf96d4f77221959c0970066733f190e1736c12ee43ca2b699f",
+    "parent_sha256": "3457d6dc615a35d4ee1c61b338845d58deee2e31f67f8dce55f7611e1a5302f4",
+    "benchmark_limit": "source-derived fragment; development-visible source; not independent unseen document"
+  }
+}

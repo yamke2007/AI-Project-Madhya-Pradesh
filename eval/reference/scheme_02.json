@@ -1,0 +1,27 @@
+{
+  "records": [
+    {
+      "crop": "MISSING:not_applicable",
+      "location": "MISSING:not_in_source",
+      "period": "MISSING:not_in_source",
+      "variable": "योजना का नाम",
+      "value": "किसानों से समर्थन मूल्य पर खाद्यान्न का उपार्जन",
+      "unit": "text",
+      "value_kind": "text"
+    }
+  ],
+  "evidence": {
+    "case_id": "scheme_02",
+    "input": "eval/cases/scheme_02.html",
+    "reference": "eval/reference/scheme_02.json",
+    "agent": "scheme",
+    "source_group": "Document",
+    "language": "hi",
+    "checked": "source_verified_by_agent_not_human",
+    "source": "data/raw/msp_scheme.html",
+    "source_locator": "table:1/row:2",
+    "input_sha256": "56481669ef6457971e301a29990c91e0c58cd918c9a7a873e1e80d88d3e227ec",
+    "parent_sha256": "94c35bb27ef193ff23118ddd78a80a8f26fb0637ffec814fc6c96731cc5b8074",
+    "benchmark_limit": "source-derived fragment; development-visible source; not independent unseen document"
+  }
+}

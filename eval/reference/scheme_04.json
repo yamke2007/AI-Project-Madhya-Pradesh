@@ -1,0 +1,27 @@
+{
+  "records": [
+    {
+      "crop": "MISSING:not_applicable",
+      "location": "MISSING:not_in_source",
+      "period": "MISSING:not_in_source",
+      "variable": "अधिकार क्षेत्र",
+      "value": "राज्य प्रवर्तित योजना",
+      "unit": "text",
+      "value_kind": "text"
+    }
+  ],
+  "evidence": {
+    "case_id": "scheme_04",
+    "input": "eval/cases/scheme_04.html",
+    "reference": "eval/reference/scheme_04.json",
+    "agent": "scheme",
+    "source_group": "Document",
+    "language": "hi",
+    "checked": "source_verified_by_agent_not_human",
+    "source": "data/raw/msp_scheme.html",
+    "source_locator": "table:1/row:4",
+    "input_sha256": "091b88bb118d032e8ce11f560e2e9c281c363e43bcc45028d69a2a9dce3d25f5",
+    "parent_sha256": "94c35bb27ef193ff23118ddd78a80a8f26fb0637ffec814fc6c96731cc5b8074",
+    "benchmark_limit": "source-derived fragment; development-visible source; not independent unseen document"
+  }
+}
