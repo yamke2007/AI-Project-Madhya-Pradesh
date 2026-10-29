@@ -1,0 +1,8 @@
+{
+  "database": "db/agriagent.sqlite",
+  "output_dir": "output",
+  "automation_log": "logs/automation_log.csv",
+  "max_bytes": 20971520,
+  "max_pdf_pages": 300,
+  "lgd_registry": null
+}
