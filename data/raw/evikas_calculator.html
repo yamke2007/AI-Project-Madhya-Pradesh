@@ -1,0 +1,2298 @@
+<!DOCTYPE html>
+<html lang="Eng" ng-app="mvcdbtApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=yes" />
+    <title> ई-VIKAS प्रणाली   </title>
+    <meta name="keywords" content="MP-FDCMS">
+    <meta name="description" content="MP-FDCMS">
+    <link rel="shortcut icon" type="image/png" href="../../Content/images/favicon.png" />
+    <!-- =============== Css Edition =============== -->
+    <link rel="preload" href="../../Content/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="../../Content/css/style.css">
+    </noscript>
+    <link rel="preload" href="../../Content/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="../../Content/css/all.min.css">
+    </noscript>
+    <link rel="preload" href="../../Content/css/bootstrap-icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="../../Content/css/bootstrap-icons.min.css">
+    </noscript>
+    <link href="../../Content/css/select2.min.css" rel="stylesheet" />
+    <link href="../../Content/css/jquery-ui.min.css" rel="stylesheet" />
+
+</head>
+<body class="inner_layout_control">
+    <!-- =============== Header Start =============== -->
+    <header id="main_header">
+        <div class="middle_header shadow-sm">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xxl-12 col-xl-12 col-lg-12">
+                        <div class="logo_inline">
+                            <div class="rishi_img">
+                                <img src="../../Content/images/mp_logo_new.webp" class="img-fluid" alt="">
+                            </div>
+                            <div class="logo_text">
+                                <h2> <i>ई</i>-VIKAS प्रणाली    </h2>
+                                <h3> (वितरण एवं कृषि उर्वरक आपूर्ति समाधान) </h3>
+                                <h6> किसान कल्याण तथा कृषि विकास विभाग, मध्य प्रदेश शासन</h6>
+                            </div>
+                            <div class="logo_box">
+                                <img src="../../Content/images/fwad_logo_fill.webp" class="img-fluid" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- =============== Header End =============== -->
+
+    
+    
+<section class="inner_controller" ng-controller="ctrlFarmerFertilizerCalculatorController" ondrag="return false;" ondrop="return false;" onpaste="return true;" oncopy="return true;">
+    <section class="page_banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page_navigation">
+                        <h1 class="page_title">उर्वरक की गणना</h1>
+                        <ol class="breadcrumb">
+                            <li><a href="Home"><i class="bi bi-house-door"></i> मुख्यपृष्ठ</a></li>
+                            <li>उर्वरक की गणना </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="innerpage_section">
+        <div class="container">
+            <div class="bdr_formbox bg-info bg-opacity-10 p-4 mb-5">
+                <div class="row">
+                    <div class="col-md-3 mb-4">
+                        <label for="" class="form-label">फ़सल का प्रकार चुनें <sup>*</sup></label>
+                        <select ng-model="CropType_Id" id="CropType_Id" name="CropType_Id" ng-change="FillCropList()"
+                                class="form-select" ng-options="CropTypeId.Crop_Type_Id as CropTypeId.Crop_Type  for CropTypeId in CropTypeIds"></select>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <label for="" class="form-label">फ़सल चुनें <sup>*</sup></label>
+                        <select ng-model="Crop_Id" id="Crop_Id" name="Crop_Id" ng-change="FillCropMolecule()"
+                                class="form-select" ng-options="CropId.CropId as CropId.CropName  for CropId in CropIds"></select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        
+                    </div>
+                </div>
+                <div class="band_layer shadow bg-white rounded-3 p-3 mb-5" ng-show="Dv_Datashow">
+                    <div class="row row-cols-5 justify-content-between">
+                        
+                        
+                        <div class="col-md-2">
+                            <div class="d-flex align-items-center mt-4">
+                                <div class="icon_layer me-2 ">
+                                    <img src="../content/images/crop.png" class="img-fluid" width="50" />
+                                </div>
+                                <div class="content_layer">
+                                    
+                                    <label for="" class="form-label">फ़सल</label>
+                                    <h6 class="text-success fw-semibold"> {{CropText}} </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="d-flex align-items-center mt-4">
+                                <div class="icon_layer me-2 ">
+                                    <img src="../content/images/surface.png" class="img-fluid" width="50" />
+                                </div>
+                                <div class="content_layer">
+                                    
+                                    <label for="" class="form-label">भूमि क्षेत्रफल </label>
+                                    <h6 class="text-success fw-semibold"> 1.00 (हेक्टेयर) </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="d-flex align-items-center">
+                                <label for="" class="form-label">ICAR के अनुसार पोषक तत्वों की मात्रा (NPK) </label>
+                                <table class="table table-bordered table-striped hero k ">
+                                    <thead>
+                                        <tr align="center">
+                                            <th class="bg_nitro"> Nitrogen(N) </th>
+                                            <th class="bg_pottas"> Phosphate(P) </th>
+                                            <th class="bg_phospho"> Potash(K) </th>
+                                        </tr>
+                                        <tr align="center">
+                                            <td> {{Nitrogen}} </td>
+                                            <td> {{Phosphate}} </td>
+                                            <td> {{Potash}} </td>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" ng-show="Dv_Datashow">
+                    <div class="col-md-12 mb-4">
+                        <h3 class="fw-semibold fs-4 text-center pb-1">अनुशंसित उर्वरक गणना </h3>
+                        <div class="partition_block2"> </div>
+                    </div>
+
+                    <div id="Urea" class="row">
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            DAP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_1_DAP}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            UREA
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_1_UREA}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_1_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            TSP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_2_TSP}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            UREA
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_2_UREA}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_2_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MAP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_3_MAP}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            UREA
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_3_UREA}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_3_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            12:32:16
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_4_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            UREA
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_4_UREA}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_4_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            20:20:0:13
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_5_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            UREA
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_5_UREA}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_5_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            16:16:16
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_6_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            UREA
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_6_UREA}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_6_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            15:15:15
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_7_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            UREA
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_7_UREA}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_7_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            24:24:00
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_8_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            UREA
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_8_UREA}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_8_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            28:28:00
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_9_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            UREA
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_9_UREA}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_9_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            14:35:14
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_10_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            UREA
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_10_UREA}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_10_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            16:20:0:13
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_11_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            UREA
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_11_UREA}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_11_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            20:20:00
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_12_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            UREA
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_12_UREA}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_12_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            15:15:15:09
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_13_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            UREA
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_13_UREA}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_13_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            11:30:14
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_14_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            UREA
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_14_UREA}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_14_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            9:24:24
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_15_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            UREA
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_15_UREA}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_15_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            UREA-SSP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_16_SSP}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            UREA
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_16_UREA}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_16_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            08:21:21
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_17_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            UREA
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_17_UREA}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_17_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            10:26:26
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_18_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            UREA
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_18_UREA}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_18_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            SSP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_19_SSP}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            UREA
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_19_UREA}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_19_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">  </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">  </div>
+                    </div>
+
+                    <div id="AmmoniumSulphate" class="row">
+
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            DAP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_20_DAP}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            Ammonium Sulphate
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_20_Amm}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_20_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            TSP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_21_TSP}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            Ammonium Sulphate
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_21_Amm}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_21_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MAP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_22_MAP}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            Ammonium Sulphate
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_22_Amm}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_22_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            12:32:16
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_23_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            Ammonium Sulphate
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_23_Amm}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_23_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            20:20:0:13
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_24_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            Ammonium Sulphate
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_24_Amm}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_24_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            16:16:16
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_25_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            Ammonium Sulphate
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_25_Amm}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_25_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            15:15:15
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_26_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            Ammonium Sulphate
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_26_Amm}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_26_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            24:24:00
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_27_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            Ammonium Sulphate
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_27_Amm}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_27_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            28:28:00
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_28_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            Ammonium Sulphate
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_28_Amm}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_28_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            14:35:14
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_29_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            Ammonium Sulphate
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_29_Amm}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_29_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            16:20:0:13
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_30_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            Ammonium Sulphate
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_30_Amm}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_30_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            20:20:00
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_31_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            Ammonium Sulphate
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_31_Amm}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_31_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            15:15:15:9
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_32_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            Ammonium Sulphate
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_32_Amm}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_32_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            11:30:14
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_33_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            Ammonium Sulphate
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_33_Amm}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_33_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            09:24:24
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_34_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            Ammonium Sulphate
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_34_Amm}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_34_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            UREA-SSP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_35_SSP}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            Ammonium Sulphate
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_35_Amm}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_35_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            08:21:21
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_36_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            Ammonium Sulphate
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_36_Amm}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_36_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            10:26:26
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_37_NPK}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            Ammonium Sulphate
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_37_Amm}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_37_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 mb-4">
+                            <div class="bg-white border border-1 shadow p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="badge bg-opacity-50 bg-warning text-dark fw-semibold p-3 py-2 font_15">
+                                        उर्वरक
+                                    </span>
+                                    <span class="badge bg-primary text-dark bg-opacity-25 fw-semibold p-3 py-2 font_15">
+                                        अनुशंसित  मात्रा (बैग में)
+                                    </span>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            SSP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_38_SSP}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            Ammonium Sulphate
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_38_Amm}} Bags </h6>
+                                    </div>
+                                </div>
+                                <div class="flex_block justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-1">
+                                            <img src="../content/images/fertilizer_bag1.png" class="img-fluid" />
+                                        </span>
+                                        <h6 class="fw-semibold mb-0">
+                                            MOP
+                                        </h6>
+                                    </div>
+                                    <div class="value_box">
+                                        <h6 class="mb-0">{{Opt_38_MOP}} Bags </h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="newloader" id="divprocessbar"></div>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="">
+                <div ng-class="msgtype == 1 ? 'alert alert-success alert-dismissable':'alert alert-danger alert-dismissable'">
+                    <i ng-class="msgtype == 1 ? 'fa fa-check':'fa fa-ban'"></i>
+                    <button type="button" class="btn-close" data-dismiss="modal" style="float: right;font-size:10px;">&times;</button>
+                    <b>{{headmessage}}!</b> {{message}}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div dir="ltr" class="loading_circle" ng-show="Loder">
+        <div class="load_one">
+        </div>
+        <div class="load_play">
+            <img src="/Content/Images/loading1.gif" alt="Loading" />
+        </div>
+    </div>
+    
+</section>
+
+
+    <!-- =============== Footer Section Start ==================== -->
+    <footer class="footer_section">
+        <div class="copyright">
+            <div class="container">
+                <div class="row mt-3">
+
+                    <div class="col-lg-12 text-center mb-3">
+                        <a href="../Policy/About_Us" class="text-white d-inline-block mb-2 px-2">  हमारे बारे में </a>
+                        <a href="../Policy/Terms_Condition" class="text-white d-inline-block mb-2 px-2">  नियम एवं शर्तें </a>
+                        
+
+                        <a href="#" target="_blank" class="text-white d-inline-block mb-2 px-2">   संपर्क करें </a>
+
+
+                        <a href="../Policy/PrivacyPolicy" class="text-white d-inline-block mb-2 px-2">  गोपनीयता नीति </a>
+
+                        <a href="#" class="text-white d-inline-block mb-2 px-2">  उत्पाद मूल्य निर्धारण </a>
+                        <a href="../Policy/RefundPolicy" class="text-white d-inline-block mb-2 px-2">  रिफंड और कैंसलेशन पॉलिसी </a>
+                        <a href="#" class="text-white d-inline-block mb-2 px-2">  शिपिंग और डिलीवरी नीति </a>
+
+                        <a href="../Policy/Data_Security_Policy" class="text-white d-inline-block mb-2 px-2">  पोर्टल नीति </a>
+
+                    </div>
+                </div>
+                <div class="row no-gutters">
+
+                    <div class="col-lg-6 col-md-8">
+                        <div class="text_left">
+
+                            <p>
+                                © <span id="currentYear"></span>   किसान कल्याण तथा कृषि विकास विभाग म.प्र. | सर्वाधिकार सुरक्षित
+                            </p>
+                        </div>
+                    </div>
+                    
+
+                    <div class="col-lg-6 col-md-4">
+                        <div class="text_right">
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- =============== Footer Section End ==================== -->
+    <!-- =============== Scripts Edition =============== -->
+    <!-- back to top start
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>-->
+    <script src="../../Content/js/jquery-latest.min.js"></script>
+    <script src="../../Content/js/jquery-migrate.min.js"></script>
+    <script src="../../Content/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="../../Content/js/scripts.js"></script>
+
+    <script src="../../Content/js/select2.min.js"></script>
+    <script src="../../Content/js/jquery-ui.min.js"></script>
+
+    <script src="/Content/CMS_JS/lodash.js"></script>
+    <script src="/e_token/js/justgage.umd.js"></script>
+    <script src="/e_token/js/raphael.min.js"></script>
+
+
+    
+    
+
+
+    
+    
+
+
+    
+
+    
+
+    
+
+
+
+
+
+
+    
+
+    <script src="/Scripts/angular.min.js"></script>
+    <script src="/angular/module/Module.js"></script>
+    <script src="/angular/module/Validation.js"></script>
+    <script src="/angular/controller/Print_js.js?v=10/25/2026 12:00:00 AM"></script>
+    <script src="/Scripts/dirPagination.js"></script>
+    <script src="/Scripts/angular-ui-router.js"></script>
+    <script src="/angular/controller/Print_js.js?v=10/25/2026 12:00:00 AM"></script>
+    
+    <script type="text/javascript">
+    </script>
+    <script src="/angular/module/Module.js?v=10/25/2026 12:00:00 AM"></script>
+    <script src="/angular/module/Validation.js?v=10/25/2026 12:00:00 AM"></script>
+    
+    <script src="/angular/controller/FarmerFertilizer_Calculator_Controller.js?v=10/25/2026 12:00:00 AM"></script>
+    
+    <script src="/angular/controller/Print_js.js?v=10/25/2026 12:00:00 AM"></script>
+    
+    <script src="/Content/select2/js/select2.js"></script>
+    <script>
+    </script>
+
+    
+
+    <script>
+        window.onload = function () {
+            if (window.self !== window.top) {
+                const header = document.getElementById("main_header");
+                const footers = document.querySelectorAll(".footer_section");
+
+                if (header) header.style.setProperty("display", "none", "important");
+
+                footers.forEach(function (footer) {
+                    footer.style.setProperty("display", "none", "important");
+                });
+            }
+        };
+    </script>
+
+    
+</body>
+</html>
+

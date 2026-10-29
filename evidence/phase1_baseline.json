@@ -1,0 +1,135 @@
+[
+  {
+    "original": "README.md",
+    "preserved": "docs/Phase1/README_original.md",
+    "sha256": "116ef6178ffddc97a586cf75ca1b003a5fe495c93a16272c865e580213809a9e",
+    "git_blob_sha256": "116ef6178ffddc97a586cf75ca1b003a5fe495c93a16272c865e580213809a9e",
+    "note": "Git core.autocrlf checkout line endings retained"
+  },
+  {
+    "original": "Schema/data_dictionary.md",
+    "preserved": "Schema/data_dictionary.md",
+    "sha256": "c222d2b153e6eff3c9adf4290f1333ffee562d129ceacb8e8671564bff49076e",
+    "git_blob_sha256": "c4b4c7aa5cd538d31cb633f92aa6da72c4a4846e1cd97019c8145249bf9d6530",
+    "note": "Git core.autocrlf checkout line endings retained"
+  },
+  {
+    "original": "Schema/database_schema.md",
+    "preserved": "Schema/database_schema.md",
+    "sha256": "420eaebee80a0f26ad93de32d6d18b85cb5f8f5b34585cebee769ef7d8fbe530",
+    "git_blob_sha256": "c855ff9d0cbdf54f22113df9bc3a2f6c704573acf8b3cf542565e253a570e4ab",
+    "note": "Git core.autocrlf checkout line endings retained"
+  },
+  {
+    "original": "Source_Inventory/MP_Source_Inventory.xlsx",
+    "preserved": "Source_Inventory/MP_Source_Inventory.xlsx",
+    "sha256": "7c93efda5b3947450eed3618df3837b3a24443265983129ec65764eba34cfe72",
+    "git_blob_sha256": "7c93efda5b3947450eed3618df3837b3a24443265983129ec65764eba34cfe72",
+    "note": "Git core.autocrlf checkout line endings retained"
+  },
+  {
+    "original": "Source_Inventory/source_inventory.csv",
+    "preserved": "Source_Inventory/source_inventory.csv",
+    "sha256": "98aa8e3489f8a43c34eae6d74f62ef0cb57fdac35f8dfcd03a905546d0035738",
+    "git_blob_sha256": "98aa8e3489f8a43c34eae6d74f62ef0cb57fdac35f8dfcd03a905546d0035738",
+    "note": "Git core.autocrlf checkout line endings retained"
+  },
+  {
+    "original": "docs/Phase1/Agent_Tool_Plan.md",
+    "preserved": "docs/Phase1/Agent_Tool_Plan.md",
+    "sha256": "2442f7b3fcde157917a0519af09a4f2d99208320ffa5f1061352f7d959b47e97",
+    "git_blob_sha256": "2a2b9821318eb4d777d48fc43526f302c8008876824583fec2cd3bd43bcef136",
+    "note": "Git core.autocrlf checkout line endings retained"
+  },
+  {
+    "original": "docs/Phase1/Crop_and_Stage_Scope.md",
+    "preserved": "docs/Phase1/Crop_and_Stage_Scope.md",
+    "sha256": "af1fecba0cedf9e45823a350c1c44b9b00aa4982e98de5222cb9447a1987ae83",
+    "git_blob_sha256": "e5024ebe20f016b2a45f7004e5c10e2c311cf6dd7cb9f0ef1ad4bbfcedc905c2",
+    "note": "Git core.autocrlf checkout line endings retained"
+  },
+  {
+    "original": "docs/Phase1/Milestones_and_Timeline.md",
+    "preserved": "docs/Phase1/Milestones_and_Timeline.md",
+    "sha256": "58f751a8ea1648a450279bdd32b0dafd1e9e695f2937d919c36701363938faf1",
+    "git_blob_sha256": "730d5bafa2056c79e9ca7afa9f984dc8bc1a64be186fe85ea2e2e6a905883803",
+    "note": "Git core.autocrlf checkout line endings retained"
+  },
+  {
+    "original": "docs/Phase1/Phase1_Evaluation_Mapping.md",
+    "preserved": "docs/Phase1/Phase1_Evaluation_Mapping.md",
+    "sha256": "f597d6f714816421606b59cf425f09985358dddd54be619cd4035b8d373322b7",
+    "git_blob_sha256": "230dc998ec7c7a882299a88f27a1855fc0a02c6129bda0ee3f6901f8be8d5383",
+    "note": "Git core.autocrlf checkout line endings retained"
+  },
+  {
+    "original": "docs/Phase1/Phase1_Report.md",
+    "preserved": "docs/Phase1/Phase1_Report.md",
+    "sha256": "42aa7dc340ecb064da4d7afac883445d4ae1666812d236997ac52f0d56c75b09",
+    "git_blob_sha256": "b1d1e591b071b7523a61690effc145b291dfbb9cb3f66012434a39f1bbcc6f6a",
+    "note": "Git core.autocrlf checkout line endings retained"
+  },
+  {
+    "original": "docs/Phase1/Problem_Statement.md",
+    "preserved": "docs/Phase1/Problem_Statement.md",
+    "sha256": "04f0a1bd355cf93ef33e724e48a9dd46f681af6168f349d8196a5329a9245c52",
+    "git_blob_sha256": "6591bea93b6af6a61aeebdfa39c0f11348c2b0e2dfb33012024e784d5ad2afcd",
+    "note": "Git core.autocrlf checkout line endings retained"
+  },
+  {
+    "original": "docs/Phase1/Source_Analysis.md",
+    "preserved": "docs/Phase1/Source_Analysis.md",
+    "sha256": "535198dd5033447775fb9ecaf7000d88b16c67a44eb2d0f8043108c7f8690234",
+    "git_blob_sha256": "6da31e8ca47f7d38fe1a90da63ed92de967d71533af057e84fb21cf3bb0680e4",
+    "note": "Git core.autocrlf checkout line endings retained"
+  },
+  {
+    "original": "docs/Phase1/Team_Info.md",
+    "preserved": "docs/Phase1/Team_Info.md",
+    "sha256": "32c6aed749d5259abcb79cff27e60941dc313801208b3cf1900a12eec7634b33",
+    "git_blob_sha256": "7afcf3ca9e0e74c2c52184378095617108b635dcf562d70c022fac1eb0eb9d07",
+    "note": "Git core.autocrlf checkout line endings retained"
+  },
+  {
+    "original": "docs/TA_Scope_and_Source_Selection.md",
+    "preserved": "docs/TA_Scope_and_Source_Selection.md",
+    "sha256": "0661b96493f0c482ee455e739d0ea254104d550c39e0cdabf1c69fa6155bafd1",
+    "git_blob_sha256": "3d5990677fcf1cd673b06ebd67b7bd0f3e0f1299c25a9a001cc22dd26368e327",
+    "note": "Git core.autocrlf checkout line endings retained"
+  },
+  {
+    "original": "docs/TA_Scope_and_Source_Selection.pdf",
+    "preserved": "docs/TA_Scope_and_Source_Selection.pdf",
+    "sha256": "c96552bfacc6bcce4fdd6cceaa467e68713fb0500ed2fc3716acdfc242a47918",
+    "git_blob_sha256": "a6e00f09f1670118fc347ff8e3b43032ad3ab7abbdcc4fdb6074b2a40926521b",
+    "note": "Git core.autocrlf checkout line endings retained"
+  },
+  {
+    "original": "docs/cleaned_source_inventory.csv",
+    "preserved": "docs/cleaned_source_inventory.csv",
+    "sha256": "7ac1ba9fb4bddb6abf4c310b8d0a5e7ecac4ab853202eb51afe6ef12ab18f5f0",
+    "git_blob_sha256": "90e606b2e9b07d23cfbd44545213b8d94db69be552a1136a19a1cbcfdcb0cc6e",
+    "note": "Git core.autocrlf checkout line endings retained"
+  },
+  {
+    "original": "docs/source_frequency_summary.csv",
+    "preserved": "docs/source_frequency_summary.csv",
+    "sha256": "4cf729fdd3381abd8604c65fc9b76e67f434edb9ca3330a5e189c09befe68435",
+    "git_blob_sha256": "a89a90161c52d23e7f1d0859fc53dbb96cf6a9955d8a39ab3f3e8a6b5462e997",
+    "note": "Git core.autocrlf checkout line endings retained"
+  },
+  {
+    "original": "docs/source_selection_notes.md",
+    "preserved": "docs/source_selection_notes.md",
+    "sha256": "3986fe5fa41fa4bc7ef29c759750462550b23e9214a9f285530924551e3f26b0",
+    "git_blob_sha256": "93dd122f0dac13f716977a4592599aa28be0de1cfadeea1b040462f27aed78e9",
+    "note": "Git core.autocrlf checkout line endings retained"
+  },
+  {
+    "original": "logs/source_verification_log.md",
+    "preserved": "logs/source_verification_log.md",
+    "sha256": "f59bc29d4c7f4eb46f3e33c01e81553d209eb1fac41c297a6e925b514dc13435",
+    "git_blob_sha256": "453c6f6055f41a5c49768cd1ef56b6d848dc104cd47e419c83843329ec46ed66",
+    "note": "Git core.autocrlf checkout line endings retained"
+  }
+]

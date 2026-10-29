@@ -1,0 +1,104 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	Scheme Dashboard
+</title>
+<script src="js/jquery-1.11.3.min.js"></script>
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<script src="js/bootstrap.min.js"></script>    
+<link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+  
+    </script>
+<style>
+.btn-sq-lg {
+  width: 150px !important;
+  height: 150px !important;
+}
+
+.btn-sq {
+  width: 100px !important;
+  height: 100px !important;
+  font-size: 10px;
+}
+
+.btn-sq-sm {
+  width: 50px !important;
+  height: 50px !important;
+  font-size: 10px;
+}
+
+.btn-sq-xs {
+  width: 25px !important;
+  height: 25px !important;
+  padding:2px;
+}
+    th {
+        text-align: center;
+    }
+
+</style>
+
+
+</head>
+<body>
+<form name="form1" method="post" action="./Schmedetail.aspx?Schemeid=112" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMTg1Mzc0NDQzD2QWAgIDD2QWBAIFDw8WAh4EVGV4dAV/4KSV4KS/4KS44KS+4KSo4KWL4KSCIOCkuOClhyDgpLjgpK7gpLDgpY3gpKXgpKgg4KSu4KWC4KSy4KWN4KSvIOCkquCksCDgpJbgpL7gpKbgpY3gpK/gpL7gpKjgpY3gpKgg4KSV4KS+IOCkieCkquCkvuCksOCljeCknOCkqGRkAgcPFgIfAAWZJjx0YWJsZSBpZCA9J3RhYjEnICBjbGFzcz0ndGFibGUgdGFibGUtc3RyaXBlZCB0YWJsZS1ib3JkZXJlZCBkdC1yZXNwb25zaXZlIGRpc3BsYXknIHN0eWxlPSd3aWR0aDoxMDAlIDsganVzdGlmeS1jb250ZW50OiBjZW50ZXI7Jz48dHI+PHRkIHN0eWxlPSd3aWR0aDoyNSU7Jz7gpLXgpL/gpK3gpL7gpJc8L3RkPjx0ZCBzdHlsZT0nd2lkdGg6NzUlOyc+4KSW4KS+4KSm4KWN4KSvIOCkqOCkvuCkl+CksOCkv+CklSDgpIbgpKrgpYLgpLDgpY3gpKTgpL8g4KSP4KS14KSCIOCkieCkquCkreCli+CkleCljeCkpOCkviDgpLjgpILgpLDgpJXgpY3gpLfgpKMg4KS14KS/4KSt4KS+4KSXPC90ZD48L3RyPjx0cj48dGQgc3R5bGU9J3dpZHRoOjI1JTsnPuCkr+Cli+CknOCkqOCkviDgpJXgpL4g4KSo4KS+4KSuPC90ZD48dGQgc3R5bGU9J3dpZHRoOjc1JTsnPuCkleCkv+CkuOCkvuCkqOCli+CkgiDgpLjgpYcg4KS44KSu4KSw4KWN4KSl4KSoIOCkruClguCksuCljeCkryDgpKrgpLAg4KSW4KS+4KSm4KWN4KSv4KS+4KSo4KWN4KSoIOCkleCkviDgpIngpKrgpL7gpLDgpY3gpJzgpKg8L3RkPjwvdHI+PHRyPjx0ZCBzdHlsZT0nd2lkdGg6MjUlOyc+4KS54KS/4KSk4KSX4KWN4KSw4KS+4KS54KWAIOCkruClguCksuCklSDgpLngpYgg4KSv4KS+IOCkqOCkueClgDwvdGQ+PHRkIHN0eWxlPSd3aWR0aDo3NSU7Jz7gpKjgpLngpYDgpII8L3RkPjwvdHI+PHRyPjx0ZCBzdHlsZT0nd2lkdGg6MjUlOyc+4KSF4KSn4KS/4KSV4KS+4KSwIOCkleCljeCkt+Clh+CkpOCljeCksDwvdGQ+PHRkIHN0eWxlPSd3aWR0aDo3NSU7Jz7gpLDgpL7gpJzgpY3gpK8g4KSq4KWN4KSw4KS14KSw4KWN4KSk4KS/4KSkIOCkr+Cli+CknOCkqOCkvjwvdGQ+PC90cj48dHI+PHRkIHN0eWxlPSd3aWR0aDoyNSU7Jz7gpK/gpYvgpJzgpKjgpL4g4KSV4KSsIOCkuOClhyDgpKrgpY3gpLDgpL7gpLDgpILgpK0g4KSV4KWAIOCkl+Ckr+ClgDwvdGQ+PHRkIHN0eWxlPSd3aWR0aDo3NSU7Jz48L3RkPjwvdHI+PHRyPjx0ZCBzdHlsZT0nd2lkdGg6MjUlOyc+4KSv4KWL4KSc4KSo4KS+IOCkleCkviDgpIngpKbgpY3gpK/gpYfgpLbgpY3gpK88L3RkPjx0ZCBzdHlsZT0nd2lkdGg6NzUlOyc+4KSq4KWN4KSw4KSm4KWH4KS2IOCkleClhyDgpJXgpL/gpLjgpL7gpKjgpYsg4KSV4KWAIOCkieCkquCkvuCksOCljeCknOCkv+CkpCDgpKvgpLjgpLIg4KSV4KWLIOCktuCkvuCkuOCkqCDgpKbgpY3gpLXgpL7gpLDgpL4g4KSW4KSw4KWA4KSm4KS+IOCknOCkvuCkqOCkviDgpKTgpL7gpJXgpL8g4KSV4KS/4KS44KS+4KSoIOCkleCliyDgpIXgpKrgpKjgpYAg4KSr4KS44KSyIOCkleClgCDgpIngpJrgpL/gpKQg4KSV4KWA4KSu4KSkIOCkquCljeCksOCkvuCkquCljeCkpCDgpLngpYsg4KS44KSV4KWHIHw8L3RkPjwvdHI+PHRyPjx0ZCBzdHlsZT0nd2lkdGg6MjUlOyc+4KSy4KS+4KSt4KS+4KSw4KWN4KSl4KWAICDgpJXgpYcg4KSy4KS/4KSPIOCkhuCkteCktuCljeCkr+CklSDgpLbgpLDgpY3gpKTgpYcgLyDgpLLgpL7gpK3gpL7gpLDgpY3gpKXgpYAgIOCkmuCkr+CkqCDgpKrgpY3gpLDgpJXgpY3gpLDgpL/gpK/gpL48L3RkPjx0ZCBzdHlsZT0nd2lkdGg6NzUlOyc+MS4g4KSV4KS/4KS44KS+4KSoIOCkpuCljeCkteCkvuCksOCkviDgpIngpKrgpL7gpLDgpY3gpJzgpKgg4KSq4KSC4KSc4KWA4KSv4KSoIOCkleCksOCkvuCkqOCkvuClpCAgMi4g4KSP4KSr4KSP4KSV4KWN4KSv4KWCIOCkleClgCDgpJfgpYHgpKPgpLXgpKTgpY3gpKTgpL4g4KS14KS+4KSy4KWAIOCkq+CkuOCksuClpDwvdGQ+PC90cj48dHI+PHRkIHN0eWxlPSd3aWR0aDoyNSU7Jz7gpLLgpL7gpK3gpL7gpLDgpY3gpKXgpYAg4KS14KSw4KWN4KSXPC90ZD48dGQgc3R5bGU9J3dpZHRoOjc1JTsnPuCkreClguCkruCkv+Ckp+CkvuCksOClgCDgpJXgpYPgpLfgpJXgpYvgpII8L3RkPjwvdHI+PHRyPjx0ZCBzdHlsZT0nd2lkdGg6MjUlOyc+4KSy4KS+4KSt4KS+4KSw4KWN4KSl4KWAIOCkleCkviDgpKrgpY3gpLDgpJXgpL7gpLA8L3RkPjx0ZCBzdHlsZT0nd2lkdGg6NzUlOyc+4KSV4KS/4KS44KS+4KSoPC90ZD48L3RyPjx0cj48dGQgc3R5bGU9J3dpZHRoOjI1JTsnPuCksuCkvuCkrSDgpJXgpYAg4KS24KWN4KSw4KWH4KSj4KWAPC90ZD48dGQgc3R5bGU9J3dpZHRoOjc1JTsnPuCkqOCkl+CkpjwvdGQ+PC90cj48dHI+PHRkIHN0eWxlPSd3aWR0aDoyNSU7Jz7gpK/gpYvgpJzgpKjgpL4g4KSV4KS+IOCkleCljeCkt+Clh+CkpOCljeCksDwvdGQ+PHRkIHN0eWxlPSd3aWR0aDo3NSU7Jz5VcmJhbiBhbmQgUnVyYWw8L3RkPjwvdHI+PHRyPjx0ZCBzdHlsZT0nd2lkdGg6MjUlOyc+4KSG4KS14KWH4KSm4KSoL+CkuOCkguCkquCksOCljeCklS/gpKrgpILgpJzgpYDgpK/gpKgv4KSq4KWN4KSw4KS24KS/4KSV4KWN4KS34KSjIOCkleCkueCkvuCkgSDgpJXgpLDgpYfgpII8L3RkPjx0ZCBzdHlsZT0nd2lkdGg6NzUlOyc+4KSX4KWH4KS54KWC4KSCLCDgpKfgpL7gpKgsIOCkruCkleCljeCkleCkviDgpI/gpLXgpIIg4KSc4KWN4KS14KS+4KSwIOCkleCkviDgpKjgpL/gpLDgpY3gpKfgpL7gpLDgpL/gpKQg4KSJ4KSq4KS+4KSw4KWN4KSc4KSoIOCkheCkteCkp+CkvyDgpK7gpYfgpIIg4KS44KSu4KSw4KWN4KSl4KSoIOCkruClguCksuCljeCkryDgpI/gpLXgpIIg4KSs4KWL4KSo4KS4IOCkquCksCDgpJXgpL/gpLjgpL7gpKjgpYvgpIIg4KS44KWHIOCkieCkquCkvuCksOCljeCknOCkqCDgpJXgpLDgpKjgpL7gpaQ8L3RkPjwvdHI+PHRyPjx0ZCBzdHlsZT0nd2lkdGg6MjUlOyc+4KSq4KSm4KSt4KS/4KS54KS/4KSkIOCkheCkp+Ckv+CkleCkvuCksOClgDwvdGQ+PHRkIHN0eWxlPSd3aWR0aDo3NSU7Jz48L3RkPjwvdHI+PHRyPjx0ZCBzdHlsZT0nd2lkdGg6MjUlOyc+4KS44KSu4KSvIOCkuOClgOCkruCkvjwvdGQ+PHRkIHN0eWxlPSd3aWR0aDo3NSU7Jz48L3RkPjwvdHI+PHRyPjx0ZCBzdHlsZT0nd2lkdGg6MjUlOyc+4KSG4KS14KWH4KSm4KSoIOCkquCljeCksOCkleCljeCksOCkv+Ckr+CkvjwvdGQ+PHRkIHN0eWxlPSd3aWR0aDo3NSU7Jz7gpJzgpYsg4KSt4KWAIOCkleCkv+CkuOCkvuCkqCDgpIXgpKrgpKjgpYAg4KSr4KS44KSyIOCktuCkvuCkuOCkqCDgpKbgpY3gpLXgpL7gpLDgpL4g4KSo4KS/4KSw4KWN4KSn4KS+4KSw4KS/4KSkIOCkleClh+CkguCkpuCljeCksCDgpKrgpLAg4KSs4KWH4KSa4KSo4KS+IOCkmuCkvuCkueCkpOCkviDgpLngpYgg4KS14KS5IOCkheCkquCkqOCkviDgpKrgpILgpJzgpYDgpK/gpKgg4KSV4KSw4KS+IOCkuOCkleCkpOCkviDgpLngpYggfDwvdGQ+PC90cj48dHI+PHRkIHN0eWxlPSd3aWR0aDoyNSU7Jz7gpIbgpLXgpYfgpKbgpKgg4KS24KWB4KSy4KWN4KSVPC90ZD48dGQgc3R5bGU9J3dpZHRoOjc1JTsnPuCkqOCkv+Ckg+CktuClgeCksuCljeCklSDgpLngpYggPC90ZD48L3RyPjx0cj48dGQgc3R5bGU9J3dpZHRoOjI1JTsnPuCkheCkquClgOCksjwvdGQ+PHRkIHN0eWxlPSd3aWR0aDo3NSU7Jz7gpJzgpL/gpLLgpL4g4KSV4KSy4KWH4KSV4KWN4KSf4KSwIC8g4KSF4KSo4KWB4KS14KS/4KSt4KS+4KSX4KWA4KSvIOCkheCkp+Ckv+CkleCkvuCksOClgCAvPC90ZD48L3RyPjx0cj48dGQgc3R5bGU9J3dpZHRoOjI1JTsnPuCkheCkqOClgeCkpuCkvuCkqCAv4KSL4KSjIC/gpLXgpL/gpKTgpY3gpKTgpYDgpK8g4KS44KS54KS+4KSv4KSk4KS+IC/gpKrgpYfgpILgpLbgpKgv4KSy4KS+4KStIOCkleClgCDgpLDgpL7gpLbgpL88L3RkPjx0ZCBzdHlsZT0nd2lkdGg6NzUlOyc+PC90ZD48L3RyPjx0cj48dGQgc3R5bGU9J3dpZHRoOjI1JTsnPuCkueCkv+CkpOCkl+CljeCksOCkvuCkueCkv+Ckr+Cli+CkgiDgpJXgpYsg4KSw4KS+4KS24KS/IOCkleClhyDgpK3gpYHgpJfgpKTgpL7gpKgg4KSV4KWAIOCkquCljeCksOCkleCljeCksOCkv+Ckr+CkviAvIOCkueCkv+CkpOCkl+CljeCksOCkvuCkueCkv+Ckr+Cli+CkgiDgpJXgpYsg4KSL4KSjIOCkj+CkteCkgiDgpIXgpKjgpYHgpKbgpL7gpKgg4KSV4KWAIOCkteCljeCkr+CkteCkuOCljeCkpeCkviAv4KS14KS/4KSk4KWN4KSk4KWA4KSvIOCkquCljeCksOCkvuCkteCkp+CkvuCkqDwvdGQ+PHRkIHN0eWxlPSd3aWR0aDo3NSU7Jz7gpLbgpL7gpLjgpKgg4KSm4KWN4KS14KS+4KSw4KS+IOCkquCljeCksOCkpOCkv+CkteCksOCljeCktyDgpKvgpLjgpLIg4KSV4KS+IOCkqOCljeCkr+ClguCkqOCkpOCkriDgpLjgpK7gpLDgpY3gpKXgpKgg4KSu4KWC4KSy4KWN4KSvIOCkpOCkryDgpJXgpL/gpK/gpL4g4KSc4KS+4KSk4KS+IOCkueCliCB8PC90ZD48L3RyPjx0cj48dGQgc3R5bGU9J3dpZHRoOjI1JTsnPuCkkeCkqOCksuCkvuCkh+CkqCDgpIbgpLXgpYfgpKbgpKgg4KS54KWH4KSk4KWBIOCksuCkv+CkguCklTwvdGQ+PHRkIHN0eWxlPSd3aWR0aDo3NSU7Jz48YSBocmVmPWh0dHA6Ly9tcGV1cGFyamFuLm5pYy5pbiAgc3R5bGU9J2NvbG9yOmJsdWU7JyB0YXJnZXQ9J19ibGFuayc+aHR0cDovL21wZXVwYXJqYW4ubmljLmluPC9hPjwvdGQ+PC90cj48dHI+PHRkIHN0eWxlPSd3aWR0aDoyNSU7Jz7gpK/gpYvgpJzgpKjgpL4g4KS44KWHIOCkuOCkruCljeCkrOCkguCkp+Ckv+CkpCDgpKbgpLjgpY3gpKTgpL7gpLXgpYfgpJwg4KS44KSC4KSy4KSX4KWN4KSoIOCkleCksOClh+CkgjwvdGQ+PHRkIHN0eWxlPSd3aWR0aDo3NSU7Jz48L3RkPjwvdHI+PHRyPjx0ZCBzdHlsZT0nd2lkdGg6MjUlOyc+4KSF4KSq4KSh4KWH4KSfIOCkpuCkv+CkqOCkvuCkguCklTwvdGQ+PHRkIHN0eWxlPSd3aWR0aDo3NSU7Jz4xOS0wNS0yMDI2IDE2OjUxOjM3PC90ZD48L3RyPjx0cj48dGQgc3R5bGU9J3dpZHRoOjI1JTsnPk5ld19vbGQ8L3RkPjx0ZCBzdHlsZT0nd2lkdGg6NzUlOyc+TmV3PC90ZD48L3RyPjwvdGFibGU+ZGTV85nWFTmKewL8B8UWtR5Ujan5cGKtaCPVFgT0QV91fw==" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="2E3A1F31" />
+<input type="hidden" name="hdnsrchID" id="hdnsrchID" />
+<input type="hidden" name="hdnsrchtype" id="hdnsrchtype" />
+    
+<div class="page-header" style="text-align:center; background-color:#1d3f8e ; color:white ; margin:0px">
+    <h1 style="margin:0px;padding-top:20px; padding-bottom:20px;">मध्य प्रदेश शासन की प्रमुख योजनाएं</h1>
+</div>
+
+        <div class="container">
+            <br />
+              <div>
+            <a href="javascript: history.go(-1)" style="color: #fff;background: #1d3f8e; padding: 13px;">BACK</a>
+        </div>
+          <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-10" style="text-align: center;color: red;font-weight: bolder;">
+                <h1><span id="lblHeading">किसानों से समर्थन मूल्य पर खाद्यान्न का उपार्जन</span></h1>
+            </div>
+            <div class="col">
+            </div>
+          </div>
+            <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-10">
+              <table id ='tab1'  class='table table-striped table-bordered dt-responsive display' style='width:100% ; justify-content: center;'><tr><td style='width:25%;'>विभाग</td><td style='width:75%;'>खाद्य नागरिक आपूर्ति एवं उपभोक्ता संरक्षण विभाग</td></tr><tr><td style='width:25%;'>योजना का नाम</td><td style='width:75%;'>किसानों से समर्थन मूल्य पर खाद्यान्न का उपार्जन</td></tr><tr><td style='width:25%;'>हितग्राही मूलक है या नही</td><td style='width:75%;'>नहीं</td></tr><tr><td style='width:25%;'>अधिकार क्षेत्र</td><td style='width:75%;'>राज्य प्रवर्तित योजना</td></tr><tr><td style='width:25%;'>योजना कब से प्रारंभ की गयी</td><td style='width:75%;'></td></tr><tr><td style='width:25%;'>योजना का उद्येश्य</td><td style='width:75%;'>प्रदेश के किसानो की उपार्जित फसल को शासन द्वारा खरीदा जाना ताकि किसान को अपनी फसल की उचित कीमत प्राप्त हो सके |</td></tr><tr><td style='width:25%;'>लाभार्थी  के लिए आवश्यक शर्ते / लाभार्थी  चयन प्रक्रिया</td><td style='width:75%;'>1. किसान द्वारा उपार्जन पंजीयन कराना।  2. एफएक्यू की गुणवत्ता वाली फसल।</td></tr><tr><td style='width:25%;'>लाभार्थी वर्ग</td><td style='width:75%;'>भूमिधारी कृषकों</td></tr><tr><td style='width:25%;'>लाभार्थी का प्रकार</td><td style='width:75%;'>किसान</td></tr><tr><td style='width:25%;'>लाभ की श्रेणी</td><td style='width:75%;'>नगद</td></tr><tr><td style='width:25%;'>योजना का क्षेत्र</td><td style='width:75%;'>Urban and Rural</td></tr><tr><td style='width:25%;'>आवेदन/संपर्क/पंजीयन/प्रशिक्षण कहाँ करें</td><td style='width:75%;'>गेहूं, धान, मक्का एवं ज्वार का निर्धारित उपार्जन अवधि में समर्थन मूल्य एवं बोनस पर किसानों से उपार्जन करना।</td></tr><tr><td style='width:25%;'>पदभिहित अधिकारी</td><td style='width:75%;'></td></tr><tr><td style='width:25%;'>समय सीमा</td><td style='width:75%;'></td></tr><tr><td style='width:25%;'>आवेदन प्रक्रिया</td><td style='width:75%;'>जो भी किसान अपनी फसल शासन द्वारा निर्धारित केंद्र पर बेचना चाहता है वह अपना पंजीयन करा सकता है |</td></tr><tr><td style='width:25%;'>आवेदन शुल्क</td><td style='width:75%;'>निःशुल्क है </td></tr><tr><td style='width:25%;'>अपील</td><td style='width:75%;'>जिला कलेक्टर / अनुविभागीय अधिकारी /</td></tr><tr><td style='width:25%;'>अनुदान /ऋण /वित्तीय सहायता /पेंशन/लाभ की राशि</td><td style='width:75%;'></td></tr><tr><td style='width:25%;'>हितग्राहियों को राशि के भुगतान की प्रक्रिया / हितग्राहियों को ऋण एवं अनुदान की व्यवस्था /वित्तीय प्रावधान</td><td style='width:75%;'>शासन द्वारा प्रतिवर्ष फसल का न्यूनतम समर्थन मूल्य तय किया जाता है |</td></tr><tr><td style='width:25%;'>ऑनलाइन आवेदन हेतु लिंक</td><td style='width:75%;'><a href=http://mpeuparjan.nic.in  style='color:blue;' target='_blank'>http://mpeuparjan.nic.in</a></td></tr><tr><td style='width:25%;'>योजना से सम्बंधित दस्तावेज संलग्न करें</td><td style='width:75%;'></td></tr><tr><td style='width:25%;'>अपडेट दिनांक</td><td style='width:75%;'>19-05-2026 16:51:37</td></tr><tr><td style='width:25%;'>New_old</td><td style='width:75%;'>New</td></tr></table>
+            </div>
+            <div class="col">
+            </div>
+          </div>
+        </div>
+    <br />
+<footer style="background-color:#1d2528;padding:5px;margin-top:5px; color:White;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6" style="text-align:left">
+                <img alt="" src="../assets/images/logo-dark.png" height="40px"/><br />   
+                &nbsp;© 2019 CMHELPLINE MADHYA PRADESH | All rights Reserved.  
+            </div>
+            <div class="col-sm-6" style="text-align:right" height="40px">
+                 <img src="../UI/img/MPSAPS.png" alt="" class="img-fluid"/>
+                <img src="../UI/img/digitalIndia.png" alt="" class="img-fluid"/>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Modal Popup -->
+
+<!-- Modal Popup -->
+</form>
+</body>
+</html>

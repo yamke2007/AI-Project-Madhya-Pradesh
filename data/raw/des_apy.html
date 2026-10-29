@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>DES | Area, Production & Yield - Query Report
+</title>
+  <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"-->
+  <link rel="stylesheet" href="https://data.desagri.gov.in/css/bootstrap.min.css ">
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="https://data.desagri.gov.in/vendors/feather/feather.css ">
+  <link rel="stylesheet" href="https://data.desagri.gov.in/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="https://data.desagri.gov.in/vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="https://data.desagri.gov.in/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="https://data.desagri.gov.in/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" type="text/css" href="https://data.desagri.gov.in/js/select.dataTables.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="https://data.desagri.gov.in/css/vertical-layout-light/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="https://data.desagri.gov.in/images/favicon.png" />
+      <link rel="stylesheet" href="https://data.desagri.gov.in/vendors/select2/select2.min.css">
+    <link rel="stylesheet" href="https://data.desagri.gov.in/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+  <link rel="stylesheet" href="https://data.desagri.gov.in/css/style.css">
+  <link rel="stylesheet" href="https://data.desagri.gov.in/css/cstmfontawesome.min.css">
+</head>
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row innerTopBar">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo mr-0 ml-1 logoTxtWrap" href="index.html">
+          <img src="https://data.desagri.gov.in/images/favicon.png" class="logoimg mr-2" alt="logo"/>
+          <p class="logoTxt text-white">
+            <strong>Directorate of Economics and Statistics</strong>
+            <span>Department of Agriculture and Farmers Welfare</span>
+            <span>Ministry of Agriculture and Farmers Welfare, Govt. of India</span>
+          </p>
+        </a>
+        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="https://data.desagri.gov.in/images/favicon.png" alt="logo"/></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <button id="menutoggleBtn" class="navbar-toggler navbar-toggler align-self-center text-info" type="button" data-toggle="minimize">
+          <span class="icon-menu"></span>
+        </button>
+        
+        <ul class="navbar-nav navbar-nav-right text-white">
+          <li class="nav-item dropdown" style="display:none !important;">
+            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+              <i class="icon-bell mx-0"></i>
+              <span class="count"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+              <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-success">
+                    <i class="ti-info-alt mx-0"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal">New user registration</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    Approve User for modules
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-warning">
+                    <i class="ti-settings mx-0"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal">Data Entry Approval</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    Approve data entered by Manish
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                <div class="preview-icon bg-info">
+                    <i class="ti-user mx-0"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal">New user registration</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    2 days ago
+                  </p>
+                </div>
+              </a>
+            </div>
+        
+          
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center text-white" type="button" data-toggle="offcanvas">
+          <span class="icon-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      
+      <!-- partial -->
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas cstmSideBar module12" id="sidebar">
+       
+        <ul class="nav">
+                        <!--Central Database management-->
+              <li class="nav-item">
+    <a class="nav-link" data-toggle="collapse" href="#crop-report" aria-expanded="false" aria-controls="crop-report">
+        <i class="icon-layout menu-icon"></i>
+        <span class="menu-title">Reports</span>
+        <i class="menu-arrow"></i>
+    </a>
+    <div class="collapse" id="crop-report">
+      <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="/website/crops-apy-report-web">Area, Production & Yield</a></li>
+          <li class="nav-item"> <a class="nav-link" href="/website/crops-report-major-contributing-district-web">Major Contributing District</a></li>
+          <!-- li class="nav-item"> <a class="nav-link" href="/report/crop/crops-reporting-status">Reporting Status</a></li -->
+          <li class="nav-item"> <a class="nav-link" href="/website/crops-report-major-contributing-State-web">Major Contributing State</a></li>
+          <!-- li class="nav-item"> <a class="nav-link" href="/report/crop/crops-quarterly-estimates-report">Quarterly Estimates</a></li -->
+          <li class="nav-item"> <a class="nav-link" href="/website/crops-report-district-level-web">Food crop Report</a></li>
+		  <!-- li class="nav-item"> <a class="nav-link" href="/website/apy-query-report-web">Apy Query Report</a></li-->
+          <!-- li class="nav-item"> <a class="nav-link" href="/website/apy-query-report-crop-season-web">Apy Query Report Crop</a></li>
+
+      <li class="nav-item"> <a class="nav-link" href="/website/apy-index-report-web">Apy Index Report</a></li -->
+
+      </ul>
+    </div>
+</li>
+		      
+
+             <!-- <li class="nav-item">
+              <a class="nav-link" href="/choose-module">
+                <i class="icon-grid menu-icon"></i>
+                <span class="menu-title">back button</span>
+              </a>
+            </li> -->
+          		
+          
+        
+        </ul>
+		
+		
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+
+        <div class="content-wrapper">
+          <div id="bread-crumb-wrap" class="row col-md-12 w-100 mx-0">
+          <a href="/" class="btn btn-icon" style="margin-top:-3px;width:25px;"><i class="ti-home"></i></a>
+            <h5 class="card-description mb-2">
+                / Area, Production & Yield - Query Report
+            </h5>
+          </div>
+		            
+
+	<input type="hidden" id="hdnrltoken" name="_token" value="c5SGAS2VBJJLS0pekd3ppKF4a635FmZNVZVCpyO6" />
+    <div class="row w-100 mx-0 card">
+          <div class="col-lg-12 mx-auto">
+            <div class="auth-form-light text-left py-4 px-0 px-sm-55">
+			<form method="GET" class="stateSearchFormxx apyReportform">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 pr-2 pl-2 filterField">
+                        <div class="form-group">
+                            <label for="txtcrop">State <span class="clr_red">*</span></label>
+                                <select class="js-example-basic-multiple w-100 form-control"  name="fltrstates[]" id="fltrstates" data-page="report" multiple="multiple" data-codetype="fltrstates">
+                                                                            <option value="">All States</option>
+                                                                                                                                                                                        <option value="35" >Andaman and Nicobar Islands</option>
+                                                                                                                <option value="28" >Andhra Pradesh</option>
+                                                                                                                <option value="12" >Arunachal Pradesh</option>
+                                                                                                                <option value="18" >Assam</option>
+                                                                                                                <option value="10" >Bihar</option>
+                                                                                                                <option value="4" >Chandigarh</option>
+                                                                                                                <option value="22" >Chhattisgarh</option>
+                                                                                                                <option value="26" >Dadra and Nagar Haveli</option>
+                                                                                                                <option value="25" >Daman and Diu</option>
+                                                                                                                <option value="7" >Delhi</option>
+                                                                                                                <option value="30" >Goa</option>
+                                                                                                                <option value="24" >Gujarat</option>
+                                                                                                                <option value="6" >Haryana</option>
+                                                                                                                <option value="2" >Himachal Pradesh</option>
+                                                                                                                <option value="1" >Jammu and Kashmir</option>
+                                                                                                                <option value="20" >Jharkhand</option>
+                                                                                                                <option value="29" >Karnataka</option>
+                                                                                                                <option value="32" >Kerala</option>
+                                                                                                                <option value="37" >Ladakh</option>
+                                                                                                                <option value="31" >Lakshadweep</option>
+                                                                                                                <option value="23" >Madhya Pradesh</option>
+                                                                                                                <option value="27" >Maharashtra</option>
+                                                                                                                <option value="14" >Manipur</option>
+                                                                                                                <option value="17" >Meghalaya</option>
+                                                                                                                <option value="15" >Mizoram</option>
+                                                                                                                <option value="13" >Nagaland</option>
+                                                                                                                <option value="21" >Odisha</option>
+                                                                                                                <option value="34" >Puducherry</option>
+                                                                                                                <option value="3" >Punjab</option>
+                                                                                                                <option value="8" >Rajasthan</option>
+                                                                                                                <option value="11" >Sikkim</option>
+                                                                                                                <option value="33" >Tamil Nadu</option>
+                                                                                                                <option value="36" >Telangana </option>
+                                                                                                                <option value="38" >The Dadra &amp; Nagar Haveli and Daman and Diu</option>
+                                                                                                                <option value="16" >Tripura</option>
+                                                                                                                <option value="9" >Uttar Pradesh</option>
+                                                                                                                <option value="5" >Uttarakhand</option>
+                                                                                                                <option value="19" >West Bengal</option>
+                                                                                                              
+                                </select>
+                            <span id="stflt" class="clr_red"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 px-2 filterField">
+					    <div class="form-group">
+						    <label for="txtdist">District <span class="text-danger">*</span></label>
+							<select class="js-example-basic-multiple form-control" name="fltrdistricts" id="fltrdistricts"  tabindex="0" multiple="multiple">
+                  							<option value="">All Districts</option>
+                                                									  								               
+							</select>
+						    <span class="text-danger d-none">Please select District</span>
+                        </div>
+                    </div>
+					<div class="col-lg-2 col-md-2 pl-2 pr-2 filterField">
+						<div class="form-group">
+							<label for="txtseason">Crop<span class="clr_red">*</span></label>
+							<select class="js-example-basic-multiple w-100 form-control" name="fltrcrops[]" id="fltrcrops" multiple="multiple">
+								<option value="">All Crops</option>
+																											<option value="1"  >Rice</option>
+																			<option value="3"  >Jowar</option>
+																			<option value="4"  >Bajra</option>
+																			<option value="5"  >Maize</option>
+																			<option value="6"  >Ragi</option>
+																			<option value="7"  >Barley</option>
+																			<option value="2"  >Wheat</option>
+																			<option value="9"  >Small millets</option>
+																			<option value="53"  >Other Cereals</option>
+																			<option value="14"  >Arhar/Tur</option>
+																			<option value="65"  >Moong(Green Gram)</option>
+																			<option value="55"  >Urad</option>
+																			<option value="13"  >Gram</option>
+																			<option value="80"  >Other Kharif pulses</option>
+																			<option value="84"  >Other  Rabi pulses</option>
+																			<option value="160"  >Other Summer Pulses</option>
+																			<option value="75"  >Moth</option>
+																			<option value="74"  >Khesari</option>
+																			<option value="76"  >Horse-gram</option>
+																			<option value="155"  >Cowpea(Lobia)</option>
+																			<option value="73"  >Masoor</option>
+																			<option value="78"  >Peas &amp; beans (Pulses)</option>
+																			<option value="18"  >Linseed</option>
+																			<option value="19"  >Castor seed</option>
+																			<option value="17"  >Rapeseed &amp;Mustard</option>
+																			<option value="21"  >Niger seed</option>
+																			<option value="23"  >Sunflower</option>
+																			<option value="16"  >Sesamum</option>
+																			<option value="15"  >Groundnut</option>
+																			<option value="25"  >other oilseeds</option>
+																			<option value="24"  >Soyabean</option>
+																			<option value="20"  >Safflower</option>
+																			<option value="26"  >Cotton(lint)</option>
+																			<option value="27"  >Jute</option>
+																			<option value="28"  >Mesta</option>
+																			<option value="29"  >Sannhamp</option>
+																			<option value="22"  >Coconut</option>
+																			<option value="62"  >Sugarcane</option>
+																			<option value="38"  >Black pepper</option>
+																			<option value="39"  >Dry chillies</option>
+																			<option value="122"  >Ginger</option>
+																			<option value="50"  >Cashewnut</option>
+																			<option value="63"  >Tobacco</option>
+																			<option value="124"  >Banana</option>
+																			<option value="95"  >Arecanut</option>
+																			<option value="42"  >Cardamom</option>
+																			<option value="43"  >Coriander</option>
+																			<option value="47"  >Garlic</option>
+																			<option value="46"  >Tapioca</option>
+																			<option value="49"  >Onion</option>
+																			<option value="45"  >Potato</option>
+																			<option value="48"  >Sweet potato</option>
+																			<option value="41"  >Turmeric</option>
+																			<option value="64"  >Guar seed</option>
+																								</select>
+							<span id="crpflt" class="clr_red"></span>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-3 px-2 filterField dtfilters">
+						<div class="form-group">
+							<label for="txtareaunit">Season <span class="text-danger">*</span></label>
+							<select class="js-example-basic-multiple form-control" name="fltrseason[]" id="fltrseason" tabindex="0" multiple="multiple">
+																																			<option value="R"  >Rabi</option>
+																											<option value="K"  >Kharif</option>
+																											<option value="A"  >Autumn</option>
+																											<option value="W"  >Winter</option>
+																											<option value="S"  >Summer</option>
+																											<option value="Y"  >Whole Year</option>
+																								</select>
+							<span class="text-danger d-none">Please select season</span>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-1 pl-2 pr-2 filterField">
+						<div class="form-group">
+							<label for="txtyear">From Year <span class="clr_red">*</span></label>
+							<select class=" w-100 form-control" name="fltrstartyear" id="fltrstartyear">
+								<option value="">Select year</option>
+																<option value="2022" >2022 - 2023</option>
+																<option value="2021" >2021 - 2022</option>
+																<option value="2020" >2020 - 2021</option>
+																<option value="2019" >2019 - 2020</option>
+																<option value="2018" >2018 - 2019</option>
+																<option value="2017" >2017 - 2018</option>
+																<option value="2016" >2016 - 2017</option>
+																<option value="2015" >2015 - 2016</option>
+																<option value="2014" >2014 - 2015</option>
+																<option value="2013" >2013 - 2014</option>
+																<option value="2012" >2012 - 2013</option>
+																<option value="2011" >2011 - 2012</option>
+																<option value="2010" >2010 - 2011</option>
+																<option value="2009" >2009 - 2010</option>
+																<option value="2008" >2008 - 2009</option>
+																<option value="2007" >2007 - 2008</option>
+																<option value="2006" >2006 - 2007</option>
+																<option value="2005" >2005 - 2006</option>
+																<option value="2004" >2004 - 2005</option>
+																<option value="2003" >2003 - 2004</option>
+																<option value="2002" >2002 - 2003</option>
+																<option value="2001" >2001 - 2002</option>
+																<option value="2000" >2000 - 2001</option>
+																<option value="1999" >1999 - 2000</option>
+																<option value="1998" >1998 - 1999</option>
+																<option value="1997" >1997 - 1998</option>
+								               
+							</select>
+							<span id="styrs" class="clr_red"></span>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-1 pl-2 pr-2 filterField">
+						<div class="form-group">
+							<label for="txtyear">To Year <span class="clr_red">*</span></label>
+							<select class=" w-100 form-control" name="fltrendyear" id="fltrendyear">
+								<option value="">Select year</option>
+																<option value="2022" >2022 - 2023</option>
+																<option value="2021" >2021 - 2022</option>
+																<option value="2020" >2020 - 2021</option>
+																<option value="2019" >2019 - 2020</option>
+																<option value="2018" >2018 - 2019</option>
+																<option value="2017" >2017 - 2018</option>
+																<option value="2016" >2016 - 2017</option>
+																<option value="2015" >2015 - 2016</option>
+																<option value="2014" >2014 - 2015</option>
+																<option value="2013" >2013 - 2014</option>
+																<option value="2012" >2012 - 2013</option>
+																<option value="2011" >2011 - 2012</option>
+																<option value="2010" >2010 - 2011</option>
+																<option value="2009" >2009 - 2010</option>
+																<option value="2008" >2008 - 2009</option>
+																<option value="2007" >2007 - 2008</option>
+																<option value="2006" >2006 - 2007</option>
+																<option value="2005" >2005 - 2006</option>
+																<option value="2004" >2004 - 2005</option>
+																<option value="2003" >2003 - 2004</option>
+																<option value="2002" >2002 - 2003</option>
+																<option value="2001" >2001 - 2002</option>
+																<option value="2000" >2000 - 2001</option>
+																<option value="1999" >1999 - 2000</option>
+																<option value="1998" >1998 - 1999</option>
+																<option value="1997" >1997 - 1998</option>
+															</select>
+							<span id="endyrs" class="clr_red"></span>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-1 pl-2 pr-2 filterField">
+						<div class="form-group">
+							<label for="txtState">Contribution Type <span class="clr_red">*</span></label>
+							<select class=" w-100 form-control" name="fltrcontribut" id="fltrcontribut">
+								<option value="all"> All Type</option>
+								<option value="area">Area</option>
+								<option value="production">Production</option>
+								<option value="yield">Yield</option>
+							</select>
+							<span class="text-danger d-none">Please select Contribution Type</span>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-2 pr-2 pl-2 mb-2 filterField ">
+						<label for="txtcrop">Report Format <span class="clr_red">*</span></label>
+						<select class="form-control" name="fltrrptformat" id="fltrrptformat">
+							<option value="scrview">Screen View</option>
+							<option value="exl">Excel</option>
+
+						</select>
+					</div>
+					<div class="col-md-2 pl-2 pr-2 filterField">
+						<div class="form-group">
+							<button type="button" onclick="getCropQueryReport()"  name="btnapyreport" value="1" class="btn btn-primary mt-10 mr-2 cstm_submitBtn2" style="">Get Data</button>
+						</div>
+					</div>
+				</div>
+			</form>
+      <div class="row">
+      <div id="repdata">
+      </div>
+    </div>
+          </div>
+        </div>
+        </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <div class="toast d-none alert" data-delay="5000" style="position: fixed; top: 15%; right: 0;">
+<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  <div class="toast-body" id="toast-body">
+    Some text inside the toast body
+  </div>
+</div>
+<footer class="footer bg-dark">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-center text-sm-left d-block d-sm-inline-block text-white"><strong>Copyright © 2021. <a href="https://testmi.in/des/" target="_blank">Directorate of Economics and Statistics (DES)</a> from Deptt. of Agriculture. All rights reserved.</strong></span>
+                      <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center text-white">Monitor and manage crops with <i class="ti-heart text-danger ml-1"></i></span>
+                  </div>
+        </footer>
+		<!--script src="https://kit.fontawesome.com/2b72de1a46.js" crossorigin="anonymous"></script-->
+		<script src="https://data.desagri.gov.in/js/kit_fa_2b72de1a46.js"></script>
+		        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+      <div id="loadingImg" class="d-none"><img src="https://data.desagri.gov.in/images/loading.gif"></div>
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+    <!-- container-scroller -->
+  <!--script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script-->
+  <script src="https://data.desagri.gov.in/js/bootstrap.bundle.min.js"></script>
+	<!--script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script!-->
+  <!-- plugins:js -->
+  <script src="https://data.desagri.gov.in/vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="https://data.desagri.gov.in/vendors/chart.js/Chart.min.js"></script>
+  <script src="https://data.desagri.gov.in/vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="https://data.desagri.gov.in/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+  <script src="https://data.desagri.gov.in/js/dataTables.select.min.js"></script>
+
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="https://data.desagri.gov.in/js/off-canvas.js"></script>
+  <script src="https://data.desagri.gov.in/js/hoverable-collapse.js"></script>
+  <script src="https://data.desagri.gov.in/js/template.js"></script>
+  <script src="https://data.desagri.gov.in/js/settings.js"></script>
+  <script src="https://data.desagri.gov.in/js/todolist.js"></script>
+  <script src="https://data.desagri.gov.in/js/custom-rl.js"></script>
+    <script src="https://data.desagri.gov.in/js/custom.js"></script>
+  <!-- endinject -->
+  <script src="https://data.desagri.gov.in/vendors/select2/select2.min.js"></script>
+
+<script src="https://data.desagri.gov.in/js/select2.js"></script>
+<script src="https://data.desagri.gov.in/js/saveAsExcel.js"></script>
+<script>
+function getCropQueryReport()
+{
+
+  var fltrstates=$('#fltrstates').val();
+  if(fltrstates.length==0)
+  {
+    $('#stflt').html('Select State');
+    return false;
+  }
+  $('#stflt').html('');
+  var fltrdistricts=$('#fltrdistricts').val();
+  //console.log(fltrdistricts.length);
+  //return false;
+  if(fltrdistricts.length==0)
+  {
+    $('#dstflt').html('Select District');
+    return false;
+  }
+  $('#dstflt').html('');
+  var fltrcrops=$('#fltrcrops').val();
+  if(fltrcrops.length==0)
+  {
+    $('#crpflt').html('Select Crop');
+    return false;
+  }
+  $('#crpflt').html('');
+  var fltrseason=$('#fltrseason').val();
+  var fltrstartyear=$('#fltrstartyear').val();
+  if(fltrstartyear=='')
+  {
+    $('#styrs').html('Select Start Year');
+    return false;
+  }
+  $('#styrs').html('');
+  var fltrendyear=$('#fltrendyear').val();
+  if(fltrendyear=='')
+  {
+    $('#endyrs').html('Select End Year');
+    return false;
+  }
+
+  $('#endyrs').html('');
+  var fltrrptformat=$('#fltrrptformat').val();
+  var fltrcontribut=$('#fltrcontribut').val();
+  //console.log(fltrcontribut);
+
+  var rltoken = document.getElementById("hdnrltoken").value;
+  $.post("https://data.desagri.gov.in/report/crop/apy-query-report-show",{
+
+    fltrstates:fltrstates,
+    fltrdistricts:fltrdistricts,
+    fltrcrops:fltrcrops,
+    fltrseason:fltrseason,
+    fltrstartyear:fltrstartyear,
+    fltrendyear:fltrendyear,
+    fltrrptformat:fltrrptformat,
+    fltrcontribut:fltrcontribut,
+    _token:rltoken
+  },function(d){
+    //console.log(d);
+    if(fltrrptformat=='scrview')
+   
+    {
+      $('#repdata').html(d);
+    }
+    else if(fltrrptformat=='exl')
+    {
+      $('#repdata').html(d);
+
+      saveAsExcel('apyreport', 'apy_query_report.xls')
+      //JSONToCSVCreater(d.data, d.reportname,d.reportmaintitle,d.reportsubtitel, true);
+    }
+  });
+}
+</script>
+
+</body>
+
+</html>
+

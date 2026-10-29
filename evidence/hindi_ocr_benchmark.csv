@@ -1,0 +1,5 @@
+tool,version,input,pages,correct_pages,share,vipanan_pages,board_pages,seconds,status
+pypdf text layer,6.17.0,data/raw/e_mandi_manual.pdf,35,0,0.0,0,0,0.92,executed
+pdfplumber text layer,0.11.10,data/raw/e_mandi_manual.pdf,35,0,0.0,0,0,2.08,executed
+tesseract eng (footer strip),5.3.4,data/raw/e_mandi_manual.pdf,35,0,0.0,0,0,11.69,executed
+tesseract hin (footer strip),5.3.4,data/raw/e_mandi_manual.pdf,35,26,0.743,34,26,13.94,executed

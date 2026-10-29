@@ -1,0 +1,154 @@
+{
+  "executed_at": "2026-10-27T15:58:42.020321+00:00",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "checks": [
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "stdout": "",
+      "stderr": "test_adapter_missing_outputs_blocked (tests.test_project.ProjectTests.test_adapter_missing_outputs_blocked) ... ok\ntest_adapter_requires_identical_cases (tests.test_project.ProjectTests.test_adapter_requires_identical_cases) ... ok\ntest_bad_date (tests.test_project.ProjectTests.test_bad_date) ... ok\ntest_bad_headers (tests.test_project.ProjectTests.test_bad_headers) ... ok\ntest_case_counts_and_hashes (tests.test_project.ProjectTests.test_case_counts_and_hashes) ... ok\ntest_code_exact (tests.test_project.ProjectTests.test_code_exact) ... ok\ntest_contamination_empty_and_overlap (tests.test_project.ProjectTests.test_contamination_empty_and_overlap) ... ok\ntest_database_fault_contained (tests.test_project.ProjectTests.test_database_fault_contained) ... ok\ntest_directory_real (tests.test_project.ProjectTests.test_directory_real) ... /usr/lib/python3.13/typing.py:429: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f19070323e0>\n  return _caches[func](*args, **kwds)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/usr/lib/python3.13/typing.py:429: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f19070324d0>\n  return _caches[func](*args, **kwds)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\nok\ntest_dump_roundtrip (tests.test_project.ProjectTests.test_dump_roundtrip) ... ok\ntest_duplicate_and_retrieval (tests.test_project.ProjectTests.test_duplicate_and_retrieval) ... ok\ntest_dynamic_template_rejected (tests.test_project.ProjectTests.test_dynamic_template_rejected) ... /usr/lib/python3.13/html/parser.py:334: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f1906ac4310>\n  m = attrfind_tolerant.match(rawdata, k)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/usr/lib/python3.13/html/parser.py:334: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f1906ac4040>\n  m = attrfind_tolerant.match(rawdata, k)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/usr/lib/python3.13/html/parser.py:334: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f1906ac47c0>\n  m = attrfind_tolerant.match(rawdata, k)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/usr/lib/python3.13/html/parser.py:334: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f1906ac48b0>\n  m = attrfind_tolerant.match(rawdata, k)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/usr/lib/python3.13/html/parser.py:334: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f1906ac4220>\n  m = attrfind_tolerant.match(rawdata, k)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\nok\ntest_empty_csv (tests.test_project.ProjectTests.test_empty_csv) ... ok\ntest_extraction_fault_contained (tests.test_project.ProjectTests.test_extraction_fault_contained) ... ok\ntest_f1_missing_penalized (tests.test_project.ProjectTests.test_f1_missing_penalized) ... ok\ntest_growth_percentage_can_exceed_100 (tests.test_project.ProjectTests.test_growth_percentage_can_exceed_100) ... ok\ntest_integer_exact (tests.test_project.ProjectTests.test_integer_exact) ... ok\ntest_invalid_financial_year (tests.test_project.ProjectTests.test_invalid_financial_year) ... ok\ntest_lgd_cannot_be_invented (tests.test_project.ProjectTests.test_lgd_cannot_be_invented) ... ok\ntest_manifest_covers_corpus (tests.test_project.ProjectTests.test_manifest_covers_corpus) ... ok\ntest_missing_file_logged (tests.test_project.ProjectTests.test_missing_file_logged) ... ok\ntest_negative_invalid (tests.test_project.ProjectTests.test_negative_invalid) ... ok\ntest_no_duplicate_credit (tests.test_project.ProjectTests.test_no_duplicate_credit) ... ok\ntest_optional_model_runner_blocked (tests.test_project.ProjectTests.test_optional_model_runner_blocked) ... ok\ntest_page_limit (tests.test_project.ProjectTests.test_page_limit) ... <frozen importlib._bootstrap>:162: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f1907031300>\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n<frozen importlib._bootstrap>:162: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f19070307c0>\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n<frozen importlib._bootstrap>:162: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f19070323e0>\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n<frozen importlib._bootstrap>:162: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f19070324d0>\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n<frozen importlib._bootstrap>:162: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f19070327a0>\nResourceWarning: Enable tracemalloc to get the object allocation traceback\nok\ntest_pdf_real_conservative (tests.test_project.ProjectTests.test_pdf_real_conservative) ... ok\ntest_phase1_preserved (tests.test_project.ProjectTests.test_phase1_preserved) ... ok\ntest_proportion_cannot_exceed_100 (tests.test_project.ProjectTests.test_proportion_cannot_exceed_100) ... ok\ntest_references_match_sources_and_pipeline (tests.test_project.ProjectTests.test_references_match_sources_and_pipeline) ... /opt/pyvenv/lib/python3.13/site-packages/bs4/element.py:1487: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f190567e980>\n  u = str.__new__(cls, value)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\nok\ntest_relative_tolerance_boundary (tests.test_project.ProjectTests.test_relative_tolerance_boundary) ... ok\ntest_root_cli_complete (tests.test_project.ProjectTests.test_root_cli_complete) ... ok\ntest_scheme_real_missing_explicit (tests.test_project.ProjectTests.test_scheme_real_missing_explicit) ... ok\ntest_scoring_lower_is_better (tests.test_project.ProjectTests.test_scoring_lower_is_better) ... ok\ntest_source_map_count (tests.test_project.ProjectTests.test_source_map_count) ... ok\ntest_unit_conversion_and_wrong_unit (tests.test_project.ProjectTests.test_unit_conversion_and_wrong_unit) ... ok\ntest_unknown_unit (tests.test_project.ProjectTests.test_unknown_unit) ... ok\ntest_unseen_value_not_hardcoded (tests.test_project.ProjectTests.test_unseen_value_not_hardcoded) ... ok\ntest_unsupported_audio (tests.test_project.ProjectTests.test_unsupported_audio) ... ok\ntest_wrong_context (tests.test_project.ProjectTests.test_wrong_context) ... ok\ntest_zero_tolerance (tests.test_project.ProjectTests.test_zero_tolerance) ... ok\ntest_failed_run_keeps_trace (tests.test_upgrades.UpgradeTests.test_failed_run_keeps_trace) ... /opt/pyvenv/lib/python3.13/site-packages/bs4/element.py:1487: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f190567eb60>\n  u = str.__new__(cls, value)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/opt/pyvenv/lib/python3.13/site-packages/bs4/element.py:1487: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f190567dc60>\n  u = str.__new__(cls, value)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\nok\ntest_groundedness_and_agentevals (tests.test_upgrades.UpgradeTests.test_groundedness_and_agentevals) ... ok\ntest_html_and_generic_csv (tests.test_upgrades.UpgradeTests.test_html_and_generic_csv) ... ok\ntest_lgd_code_copied_only_from_registry (tests.test_upgrades.UpgradeTests.test_lgd_code_copied_only_from_registry) ... /opt/pyvenv/lib/python3.13/site-packages/pdfplumber/utils/pdfinternals.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f190567e980>\n  return type(x)(resolve_all(v) for v in x)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/opt/pyvenv/lib/python3.13/site-packages/pdfplumber/utils/pdfinternals.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f190567ec50>\n  return type(x)(resolve_all(v) for v in x)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/opt/pyvenv/lib/python3.13/site-packages/pdfplumber/utils/pdfinternals.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f190567ed40>\n  return type(x)(resolve_all(v) for v in x)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/opt/pyvenv/lib/python3.13/site-packages/pdfplumber/utils/pdfinternals.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f190567ee30>\n  return type(x)(resolve_all(v) for v in x)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\nok\ntest_model_header_mapping (tests.test_upgrades.UpgradeTests.test_model_header_mapping) ... /usr/lib/python3.13/unittest/case.py:686: ResourceWarning: unclosed <socket.socket fd=3, family=2, type=1, proto=0, laddr=('127.0.0.1', 44047)>\n  function, args, kwargs = self._cleanups.pop()\nResourceWarning: Enable tracemalloc to get the object allocation traceback\nok\ntest_model_unavailable_does_not_guess (tests.test_upgrades.UpgradeTests.test_model_unavailable_does_not_guess) ... ok\ntest_pdf_table_handoff_and_total_row (tests.test_upgrades.UpgradeTests.test_pdf_table_handoff_and_total_row) ... /opt/pyvenv/lib/python3.13/site-packages/pypdf/_utils.py:265: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f1904dae2f0>\n  m = regex.search(name + tok)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/opt/pyvenv/lib/python3.13/site-packages/pypdf/_utils.py:265: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f1904dad3f0>\n  m = regex.search(name + tok)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\nok\ntest_scanned_english_table (tests.test_upgrades.UpgradeTests.test_scanned_english_table) ... ok\ntest_scanned_hindi_table (tests.test_upgrades.UpgradeTests.test_scanned_hindi_table) ... /usr/lib/python3.13/csv.py:186: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f1904daf010>\n  d = dict(zip(self.fieldnames, row))\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/usr/lib/python3.13/csv.py:186: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f19040ad300>\n  d = dict(zip(self.fieldnames, row))\nResourceWarning: Enable tracemalloc to get the object allocation traceback\nok\ntest_tool_fault_retried (tests.test_upgrades.UpgradeTests.test_tool_fault_retried) ... /opt/pyvenv/lib/python3.13/site-packages/pdfplumber/utils/pdfinternals.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f1904daf010>\n  return type(x)(resolve_all(v) for v in x)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\nok\ntest_xlsx_mp_only (tests.test_upgrades.UpgradeTests.test_xlsx_mp_only) ... /opt/pyvenv/lib/python3.13/site-packages/openpyxl/descriptors/excel.py:45: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f1904dafc40>\n  class Percentage(MinMax):\nResourceWarning: Enable tracemalloc to get the object allocation traceback\nok\n\n----------------------------------------------------------------------\nRan 51 tests in 9.602s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "run.py",
+        "--input",
+        "data/raw/icar_kvk.html"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "stdout": "{\"run_id\": \"8c228b69-ae9f-4f68-82b9-7373b3104371\", \"agent\": \"directory\", \"status\": \"complete\", \"errors\": [], \"warnings\": [], \"latency_seconds\": 0.03978205199973672}\nrecords=162\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "run.py",
+        "--input",
+        "data/raw/msp_scheme.html"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "passed": true,
+      "stdout": "{\"run_id\": \"a2c67b99-0fa9-4a29-b795-33bddd62c9be\", \"agent\": \"scheme\", \"status\": \"partial\", \"errors\": [], \"warnings\": [], \"latency_seconds\": 0.009555449999879784}\nrecords=23\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "run.py",
+        "--input",
+        "data/raw/mp_economic_survey.pdf"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "passed": true,
+      "stdout": "{\"run_id\": \"5b40d042-8fa6-4efc-944d-9d0208df0575\", \"agent\": \"statistics\", \"status\": \"partial\", \"errors\": [], \"warnings\": [\"Partial PDF grammar: only explicit 'produced X tonnes of CROP in YEAR' sentences; omitted facts are not inferred\"], \"latency_seconds\": 5.212115333999918}\nrecords=1\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "run.py",
+        "--input",
+        "data/derived/survey_agriculture_transcription.csv",
+        "--manual-interventions",
+        "1"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "stdout": "{\"run_id\": \"a4724da9-e59b-459d-82ac-0cf32fab6e5a\", \"agent\": \"statistics\", \"status\": \"complete\", \"errors\": [], \"warnings\": [], \"latency_seconds\": 0.0045464670001820195}\nrecords=10\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "run.py",
+        "--input",
+        "data/raw/evikas_calculator.html"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true,
+      "stdout": "{\"run_id\": \"180a8ff5-2d28-472d-a176-0f5075019c01\", \"agent\": \"unrouted\", \"status\": \"failed\", \"errors\": [\"ExtractionError: Unrendered dynamic template: export actual results; placeholders are not observations\"], \"warnings\": [], \"latency_seconds\": 0.030524564999723225}\nrecords=0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "run.py",
+        "--input",
+        "data/raw/icar_kvk.html",
+        "--fault",
+        "extract"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true,
+      "stdout": "{\"run_id\": \"8a0edb58-64c0-4b7d-a55d-571aa87db7a2\", \"agent\": \"unrouted\", \"status\": \"failed\", \"errors\": [\"ExtractionError: Injected extraction failure\"], \"warnings\": [], \"latency_seconds\": 0.01703858599967134}\nrecords=0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "run.py",
+        "--input",
+        "data/raw/icar_kvk.html",
+        "--fault",
+        "database"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true,
+      "stdout": "{\"run_id\": \"7fbb849e-f1f0-4365-9e1e-f09cf56259f9\", \"agent\": \"directory\", \"status\": \"failed\", \"errors\": [\"Storage: Injected database failure\"], \"warnings\": [], \"latency_seconds\": 0.03784070699975928}\nrecords=162\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "eval/compare_adapters.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "scripts/db_cli.py",
+        "--id",
+        "1"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "stdout": "{\n  \"id\": 1,\n  \"observation\": {\n    \"crop\": \"MISSING:not_applicable\",\n    \"location\": \"datia\",\n    \"period\": \"MISSING:not_applicable\",\n    \"locator\": \"table:1/row:3\",\n    \"evidence\": \"1. Krishi Vigyan Kendra, Village Hamirpur, Distt. Datia- Vice-Chancellor, Jawaharlal Nehru Krishi Viswavidyalaya, Jabalpur-482 004 2007 SAU\",\n    \"record_id\": \"1\",\n    \"variable\": \"address\",\n    \"value\": \"Krishi Vigyan Kendra, Village Hamirpur, Distt. Datia-\",\n    \"unit\": \"text\",\n    \"value_kind\": \"text\",\n    \"source\": \"sha256:4a2a2b4deb8d58cedc8d9bba5333c2db2f651480d4339e169c5a6eecaa940beb\",\n    \"source_type\": \"Document\",\n    \"agent\": \"directory\",\n    \"run_id\": \"b56e3e3d-f2e1-422f-847d-4876cc6eff92\",\n    \"validation_errors\": [],\n    \"validation_status\": \"valid\",\n    \"validation_rechecked_run_id\": \"8c228b69-ae9f-4f68-82b9-7373b3104371\"\n  },\n  \"source_url\": \"https://icar.org.in/en/node/15044\",\n  \"input_path\": \"data/raw/icar_kvk.html\",\n  \"sha256\": \"4a2a2b4deb8d58cedc8d9bba5333c2db2f651480d4339e169c5a6eecaa940beb\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "scripts/db_cli.py",
+        "--dump"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "stdout": "Dump refreshed\n",
+      "stderr": ""
+    }
+  ],
+  "status": "passed"
+}

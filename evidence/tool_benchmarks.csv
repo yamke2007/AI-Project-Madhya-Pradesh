@@ -1,0 +1,5 @@
+tool,version,input,command,pages,text_pages,characters,tables,seconds,status,error,quality_note
+pypdf,6.12.1,data/raw/mp_economic_survey.pdf,python scripts/benchmark_tools.py,20,17,22368,not_measured,0.9688184999977238,executed,,Character/page counts are not extraction accuracy
+pdfplumber,0.11.9,data/raw/mp_economic_survey.pdf,python scripts/benchmark_tools.py,20,17,21834,not_measured,3.805556199979037,executed,,Character/page counts are not extraction accuracy
+pypdf,6.12.1,data/raw/e_mandi_manual.pdf,python scripts/benchmark_tools.py,35,35,11900,not_measured,1.0546352999517694,executed,,Character/page counts are not extraction accuracy
+pdfplumber,0.11.9,data/raw/e_mandi_manual.pdf,python scripts/benchmark_tools.py,35,35,10287,not_measured,3.3637372000375763,executed,,Character/page counts are not extraction accuracy

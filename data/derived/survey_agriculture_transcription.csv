@@ -1,0 +1,11 @@
+crop,location,period,variable,value,unit,value_kind,qualifier,origin_locator,origin_source
+wheat,Madhya Pradesh,2022-23,production,352.7,lakh tonnes,decimal,advance estimate,page:7,data/raw/mp_economic_survey.pdf
+wheat,Madhya Pradesh,2013-14,production,174.8,lakh tonnes,decimal,historical,page:7,data/raw/mp_economic_survey.pdf
+rice,Madhya Pradesh,2022-23,production,131.8,lakh tonnes,decimal,during this period; context sentence 1,page:7,data/raw/mp_economic_survey.pdf
+rice,Madhya Pradesh,2013-14,production,53.2,lakh tonnes,decimal,context sentence 1,page:7,data/raw/mp_economic_survey.pdf
+MISSING:not_applicable,Madhya Pradesh,2021-22,cropped_area_growth,5.46,percent,decimal,compared with 2020-21; A,page:7,data/raw/mp_economic_survey.pdf
+MISSING:not_applicable,Madhya Pradesh,2021-22,crop_production_growth,4.16,percent,decimal,compared with 2020-21,page:7,data/raw/mp_economic_survey.pdf
+MISSING:not_applicable,Madhya Pradesh,2021-22,insured_farmers_lower_bound,90,lakh farmers,decimal,more than,page:7,data/raw/mp_economic_survey.pdf
+MISSING:not_applicable,Madhya Pradesh,MISSING:not_applicable,irrigation_capacity_growth,585,percent,decimal,period not explicit in same clause,page:7,data/raw/mp_economic_survey.pdf
+MISSING:not_applicable,Madhya Pradesh,2022,irrigation_capacity_lower_bound,45,lakh hectare,decimal,more than,page:7,data/raw/mp_economic_survey.pdf
+MISSING:not_applicable,Madhya Pradesh,2025,irrigation_capacity_target,65,lakh hectare,decimal,target; not observed,page:7,data/raw/mp_economic_survey.pdf

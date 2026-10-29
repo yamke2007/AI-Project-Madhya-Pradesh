@@ -1,0 +1,79 @@
+{
+  "status": "structural_checks_passed",
+  "checks": [
+    {
+      "check": "required_paths",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "inventory_cardinality",
+      "passed": true,
+      "detail": 23
+    },
+    {
+      "check": "agent_cards",
+      "passed": true,
+      "detail": [
+        "advisory",
+        "directory",
+        "excluded_personal",
+        "fertilizer",
+        "insurance",
+        "machinery",
+        "market",
+        "procurement",
+        "scheme",
+        "service_directory",
+        "statistics",
+        "tables"
+      ]
+    },
+    {
+      "check": "case_counts",
+      "passed": true,
+      "detail": 52
+    },
+    {
+      "check": "reference_separation",
+      "passed": true,
+      "detail": "Reference values kept separate from input"
+    },
+    {
+      "check": "provisional_metrics_schema",
+      "passed": true,
+      "detail": "Official separate CSV header unavailable; audit checks only declared provisional schema"
+    },
+    {
+      "check": "automation_schema",
+      "passed": true,
+      "detail": 428
+    },
+    {
+      "check": "manifest_complete",
+      "passed": true,
+      "detail": 59
+    },
+    {
+      "check": "manifest_hashes",
+      "passed": true,
+      "detail": "SHA-256"
+    },
+    {
+      "check": "phase1_preserved",
+      "passed": true,
+      "detail": 19
+    },
+    {
+      "check": "dump_restore",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "check": "real_data_dump",
+      "passed": true,
+      "detail": 607
+    }
+  ],
+  "caveat": "Structural checks do not certify independent held-out evaluation, official CSV layout, adapter comparison, live surprise inputs, LGD or multi-agent gates."
+}
